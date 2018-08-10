@@ -4,23 +4,24 @@
 \alias{theme_tam}
 \title{Tribune de Genève / Tamedia Romandie chart theme}
 \usage{
-theme_tam(ticks = TRUE, base_family = "Titillium Web", base_size = 13)
+theme_tam(ticks = TRUE, xGridLines = T, yAxisNoTitle = F,
+  base_family = "Titillium Web", base_size = 13,
+  axis.title.colour = "#181e4e", axis.colour = "#2b2b2b",
+  axis.ticks.colour = "#2b2b2b")
 }
 \arguments{
-\item{ticks}{\code{logical} Show axis ticks?}
+\item{ticks}{\code{logical} show axis ticks?}
+
+\item{xGridLines}{a logical, have horizontal grid lines?}
+
+\item{yAxisNoTitle}{a logical, should the y title, y-axis and y-ticks be removed? See this example \url{https://rud.is/b/2016/03/16/supreme-annotations/}}
 
 \item{base_family}{Base font family}
 
 \item{base_size}{Base font size}
+
+\item{axis.title.colour, axis.colour, axis.ticks.colour}{a string, a colour}
 }
 \description{
 ggplot  theme copied/inspired from https://gist.github.com/hrbrmstr/283850725519e502e70c
-}
-\examples{
-require(ggplot2)
-require(tamTheme)
-qplot(1:10, 1:10, size = 10:1) + xlab("axis x label") + ylab ("y axis label") + theme_tam()
-qplot(mtcars$mpg) + theme_tam()
-
-
 }
