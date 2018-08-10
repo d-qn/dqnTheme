@@ -22,7 +22,7 @@
 ##'   theme_tam(xGridLines = TRUE) +
 ##'   labs(title = "A catchy title", 
 ##'     subtitle = "a descriptive subtitle",
-##'     caption = label_wrap_gen(80)("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
+##'     caption = label_wrap_gen(80)("Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
 ##' 
 ##' # based on https://rud.is/b/2016/03/16/supreme-annotations/
 ##' qplot(1:10, 1:10, size = 10:1) + 
