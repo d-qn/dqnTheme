@@ -10,29 +10,35 @@
 ##' @param base_family Base font family
 ##' @param axis.title.colour,axis.colour,axis.ticks.colour a string, a colour
 ##' @import ggplot2 
+##' @import gridExtra
 ##' @importFrom grid unit
 ##' @importFrom extrafont loadfonts choose_font
 ##' @export
 ##' @examples
 ##' require(ggplot2)
+##' require(extrafont)
 ##' require(tamTheme)
+##' 
 ##' qplot(1:10, 1:10, size = 10:1) + 
 ##'   xlab("axis x label") + 
 ##'   ylab ("y axis label") + 
 ##'   theme_tam(xGridLines = TRUE) +
 ##'   labs(title = "A catchy title", 
 ##'     subtitle = "a descriptive subtitle",
-##'     caption = label_wrap_gen(80)("Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
+##'     caption = label_wrap_gen(80)(
+##'     "Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
 ##' 
 ##' # based on https://rud.is/b/2016/03/16/supreme-annotations/
 ##' qplot(1:10, 1:10, size = 10:1) + 
 ##'   xlab("axis x label") + 
 ##'   ylab ("y axis label") + 
 ##'   theme_tam(yAxisNoTitle = TRUE) +
-##'   labs(title = "A catchy title", subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia) + 
+##'   labs(
+##'     title = "A catchy title", 
+##'     subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia") +
 ##'   annotate(geom = "label", x = 0.2, y = 10, 
-##'   label = "super unité", hjust = 0, vjust = 0.5, 
-##'   family = "Titillium Web", label.padding = unit(0.15, "lines"),
+##'     label = "super unité", hjust = 0, vjust = 0.5, 
+##'     family = "Titillium Web", label.padding = unit(0.15, "lines"),
 ##'    label.size = 0)
 ##'
 ##' qplot(mtcars$mpg) + 
