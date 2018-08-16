@@ -61,10 +61,11 @@ theme_tam <- function(
   ret <- theme_minimal(base_family = base_family, base_size = base_size) +
     theme(
       plot.title   = element_text(
-        hjust = 0, vjust = 5, size = rel(1.8), face = "bold", colour = '#0a1b29',
+        hjust = 0, size = rel(1.8), face = "bold", colour = '#0a1b29',
         margin = margin(t = 0, r = 0, b = 7, l = 0)),
       plot.subtitle = element_text(
-        hjust = 0, vjust = 5, size = rel(1.2), 
+        hjust = 0,  size = rel(1.2), 
+        margin = margin(b = 3),
         colour = "#262a40", 
         family = paste0(base_family, " Light")),
       plot.caption = element_text(
@@ -80,7 +81,7 @@ theme_tam <- function(
         size = 0.2, 
         colour = axis.colour
         ),
-      plot.margin = unit(c(1, 0.7, 1, 0.3), "lines"),
+      plot.margin = unit(c(0.5, 0.5, 0.7, 0.3), "lines"),
       panel.grid = element_blank()
     )
   
