@@ -9,15 +9,15 @@
 ##' dimensionWatcher
 ##' }
 
-dimensionWatcher <- "<script src='https://files.newsnetz.ch/scripts/dimension_watcher.js'></script>
+dimensionWatcher <- '<script src="https://files.newsnetz.ch/scripts/dimension_watcher.js"></script>
   <script>
   DimensionWatcher.enableParentNotification(
     function() {
-      return $('body').width();
+      return "100%"
     },
     function() {
-      return $('body').height();
+      return document.body.scrollHeight
     }
   );
-</script>"
+</script>'
   
