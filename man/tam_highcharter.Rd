@@ -3,19 +3,13 @@
 \docType{data}
 \name{hc_theme_tg}
 \alias{hc_theme_tg}
-\alias{style_swi_highcharter}
-\alias{style_swi_highcharter_centered}
-\alias{swi_highlight_css}
+\alias{style_tam_highcharter}
 \title{Highchart(er) TG-Tamedia theme}
 \format{An object of class \code{hc_theme} of length 8.}
 \usage{
 hc_theme_tg
 
-style_swi_highcharter()
-
-style_swi_highcharter_centered()
-
-swi_highlight_css()
+style_tam_highcharter()
 }
 \description{
 Some helpers to get a TG look for highcharter
@@ -27,7 +21,6 @@ data(diamonds, mpg, package = "ggplot2")
 hchart(mpg, "scatter", x = displ, y = hwy, group = class) \%>\% hc_add_theme(hc_theme_swi)
 }
 style_swi_highcharter()
-style_swi_highcharter_centered()
 }
 \seealso{
 http://jkunst.com/highcharter/themes.html#create-themes

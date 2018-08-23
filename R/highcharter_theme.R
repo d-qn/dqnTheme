@@ -95,7 +95,7 @@ hc_theme_tg <- highcharter::hc_theme(
     borderRadius = 10,
     padding = 3,
     style = list (
-      fontFamily = 'OTitillium Web Light',
+      fontFamily = 'Titillium Web',
       fontSize = "0.8em"
     )
   )
@@ -105,20 +105,6 @@ hc_theme_tg <- highcharter::hc_theme(
 ##' @export
 ##' @examples
 ##' style_swi_highcharter()
-style_swi_highcharter <- function() {
-  list.files(system.file("extdata", package="swiRcharts"), 'stylesHighcharter.html', full.names = T)
-}
-
-##' @rdname tam_highcharter
-##' @export
-##' @examples
-##' style_swi_highcharter_centered()
-style_swi_highcharter_centered <- function() {
-  list.files(system.file("extdata", package="swiRcharts"), 'stylesHighcharter_centered.html', full.names = T)
-}
-
-##' @rdname tam_highcharter
-##' @export
-swi_highlight_css <- function() {
-  list.files(system.file("extdata", package="swiRcharts"), 'swi_highlight.css', full.names = T)
+style_tam_highcharter <- function() {
+  list.files(system.file("extdata", package="tamTheme"), 'tam_highcharter.css', full.names = T)
 }
