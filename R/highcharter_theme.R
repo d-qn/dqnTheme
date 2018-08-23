@@ -9,8 +9,13 @@
 ##' @examples
 ##' \dontrun{
 ##' require(highcharter)
+##' require(tamTheme)
 ##' data(diamonds, mpg, package = "ggplot2")
-##' hchart(mpg, "scatter", x = displ, y = hwy, group = class) %>% hc_add_theme(hc_theme_swi)
+##' hchart(mpg, "scatter", 
+##'   hcaes(x = displ, y = hwy, group = class)) %>% 
+##'   hc_add_theme(hc_theme_tg) %>% 
+##'   hc_title(text = "super catchy title") %>% 
+##'   hc_subtitle(text = "a description of what the hell is shown")
 ##' }
 
 hc_theme_tg <- highcharter::hc_theme(
@@ -36,7 +41,8 @@ hc_theme_tg <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#262626',
-      fontFamily = 'Titillium Web Light',
+      fontFamily = 'Titillium Web',
+      fontWeight = 200,
       fontSize = "1.2em"
     )
   ),
@@ -93,7 +99,7 @@ hc_theme_tg <- highcharter::hc_theme(
   ),
   tooltip = list(
     borderRadius = 10,
-    padding = 3,
+    padding = 4,
     style = list (
       fontFamily = 'Titillium Web',
       fontSize = "0.8em"
@@ -104,7 +110,7 @@ hc_theme_tg <- highcharter::hc_theme(
 ##' @rdname tam_highcharter
 ##' @export
 ##' @examples
-##' style_swi_highcharter()
+##' style_tam_highcharter()
 style_tam_highcharter <- function() {
   list.files(system.file("extdata", package="tamTheme"), 'tam_highcharter.css', full.names = T)
 }

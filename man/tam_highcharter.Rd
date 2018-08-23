@@ -17,10 +17,15 @@ Some helpers to get a TG look for highcharter
 \examples{
 \dontrun{
 require(highcharter)
+require(tamTheme)
 data(diamonds, mpg, package = "ggplot2")
-hchart(mpg, "scatter", x = displ, y = hwy, group = class) \%>\% hc_add_theme(hc_theme_swi)
+hchart(mpg, "scatter", 
+  hcaes(x = displ, y = hwy, group = class)) \%>\% 
+  hc_add_theme(hc_theme_tg) \%>\% 
+  hc_title(text = "super catchy title") \%>\% 
+  hc_subtitle(text = "a description of what the hell is shown")
 }
-style_swi_highcharter()
+style_tam_highcharter()
 }
 \seealso{
 http://jkunst.com/highcharter/themes.html#create-themes
