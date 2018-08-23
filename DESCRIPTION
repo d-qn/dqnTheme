@@ -8,7 +8,8 @@ Maintainer: Duc-Quang Nguyen <duc-quang.nguyen@tdg.ch>
 Imports:
     ggplot2 (>= 2.1.0.9),
     extrafont,
-    gridExtra
+    gridExtra,
+    highcharter
 Description: Themes, colors and convienence functions
 License: GNU
 RoxygenNote: 6.0.1

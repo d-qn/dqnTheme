@@ -1,9 +1,8 @@
 ##' html code to call Tamedia dimensionWatcher
 ##' 
 ##' snippet to include in page of dynamic sizing of iframe 
-##' 
+##'
 ##' @export
-##' @seealso 
 ##' @examples
 ##' \dontrun{
 ##' dimensionWatcher
