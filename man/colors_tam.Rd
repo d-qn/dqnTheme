@@ -17,10 +17,6 @@ tam_spal
 \description{
 Just a bunch of hex color vectors... 
 Color palette as vector (no function). Colors can be sequential (one color), diverging (2 colors)
-
-Diverging color palette
-
-Single hue divering color palette
 }
 \details{
 tam_pal: 8 categorical tam colors

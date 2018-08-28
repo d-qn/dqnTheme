@@ -12,7 +12,7 @@
 ##' brks_labels <- formatBreaks(brks, inbetween_sep = ' - ')
 ##' formatBreaks(brks, inbetween_sep = ' - ', suffix_first = " unité")
 ##' cut(cont_var, breaks = brks, labels = brks_labels)
-##' 
+
 formatBreaks <- function(
   brks, 
   inbetween_sep = "-",

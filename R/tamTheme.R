@@ -45,8 +45,7 @@
 ##'   labs(title = "A catchy title", 
 ##'   subtitle = "a descriptive subtitle") +
 ##' theme_tam()
-##'
-##'
+
 theme_tam <- function(
   ticks = TRUE, 
   xGridLines = T,
