@@ -1,22 +1,20 @@
-##' Highchart(er) TG-Tamedia theme
-##' 
-##' Some helpers to get a TG look for highcharter
-##'
-##' @rdname tam_highcharter
-##' @importFrom highcharter hc_theme
-##' @export
-##' @seealso http://jkunst.com/highcharter/themes.html#create-themes
-##' @examples
-##' \dontrun{
-##' require(highcharter)
-##' require(tamTheme)
-##' data(diamonds, mpg, package = "ggplot2")
-##' hchart(mpg, "scatter", 
-##'   hcaes(x = displ, y = hwy, group = class)) %>% 
-##'   hc_add_theme(hc_theme_tg) %>% 
-##'   hc_title(text = "super catchy title") %>% 
-##'   hc_subtitle(text = "a description of what the hell is shown")
-##' }
+#' Highchart(er) TG-Tamedia theme
+#' 
+#' Some helpers to get a TG look for highcharter
+#'
+#' @rdname tam_highcharter
+#' @importFrom highcharter hc_theme
+#' @export
+#' @seealso http://jkunst.com/highcharter/themes.html#create-themes
+#' @examples
+#' require(highcharter)
+#' require(tamTheme)
+#' data(diamonds, mpg, package = "ggplot2")
+#' hchart(mpg, "scatter", 
+#'   hcaes(x = displ, y = hwy, group = class)) %>% 
+#'   hc_add_theme(hc_theme_tg) %>% 
+#'   hc_title(text = "super catchy title") %>% 
+#'   hc_subtitle(text = "a description of what the hell is shown")
 
 hc_theme_tg <- highcharter::hc_theme(
   colors = tam_pal,
@@ -24,7 +22,8 @@ hc_theme_tg <- highcharter::hc_theme(
    # backgroundColor = "#f2f2f2",
     style = list (
       fontFamily = 'Titillium Web'
-    )
+    ),
+    spacing = c(20, 5, 2, 0)
   ),
   title = list(
     align = "left",
@@ -43,7 +42,7 @@ hc_theme_tg <- highcharter::hc_theme(
       color = '#262626',
       fontFamily = 'Titillium Web',
       fontWeight = 200,
-      fontSize = "1.2em"
+      fontSize = "1.3em"
     )
   ),
   legend = list(
@@ -63,36 +62,45 @@ hc_theme_tg <- highcharter::hc_theme(
     lineColor =  "#CEC6B9",
     gridLineDashStyle = "Dot",
     labels = list(
-      algn = "left",
+      align = "left",
       x = 0,
-      y = -2,
+      y = -3,
       tickLength = 0,
       tickColor = "#CEC6B9",
       tickWidth = 1,
       style = list (
+        fontWeight = 200,
         fontSize = '1em',
         color = "#333333"
       )
     ),
     title = list(
+      align = "high",
       style = list (
-        fontSize = '1.5em',
+        fontWeight = 400,
+        fontSize = '1.3em',
         color = "#333333"
       )
     )
   ),
   xAxis = list(
     lineColor =  "#CEC6B9",
+    tickLength = 6,
+    tickColor = "#CEC6B9",
     labels = list(
+      distance = 5,
       style = list (
+        fontWeight = 200,
         fontSize = '1em',
         color = "#333333"
       )
     ),
     title = list(
-      margin = 17,
+      align = "high",
+      margin = 3,
       style = list (
-        fontSize = '1.5em',
+        fontWeight = 400,
+        fontSize = '1.3em',
         color = "#333333"
       )
     )
@@ -102,7 +110,7 @@ hc_theme_tg <- highcharter::hc_theme(
     padding = 4,
     style = list (
       fontFamily = 'Titillium Web',
-      fontSize = "0.8em"
+      fontSize = "0.9em"
     )
   )
 )

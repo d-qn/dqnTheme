@@ -15,7 +15,6 @@ style_tam_highcharter()
 Some helpers to get a TG look for highcharter
 }
 \examples{
-\dontrun{
 require(highcharter)
 require(tamTheme)
 data(diamonds, mpg, package = "ggplot2")
@@ -24,7 +23,6 @@ hchart(mpg, "scatter",
   hc_add_theme(hc_theme_tg) \%>\% 
   hc_title(text = "super catchy title") \%>\% 
   hc_subtitle(text = "a description of what the hell is shown")
-}
 style_tam_highcharter()
 }
 \seealso{

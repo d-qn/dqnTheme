@@ -1,18 +1,18 @@
 #' Helper for more readable labels when use with \code{cut}
 #' 
 #' @param brks numeric vector that will be used to \code{cut}
-#' @param inbetween_sep,prefix_first,prefix_last,suffix_first,suffix_last 
-#'   strings that are put in between intervals, at the beginning or at the intervals only. 
+#' @param inbetween_sep,prefix_first,prefix_last,suffix_first,suffix_last strings that are put in between intervals, at the begenninging or at the intervals only. 
 #' @return a character string
-#' @export
 #' @examples 
+#' \dontrun
+#' {
 #' cont_var <- rnorm (100) * 100
 #' brks <- pretty(cont_var, n = 10) # or range(cont_var) %>% pretty()
-#' brks_labels <- formatBr
-#' eaks(brks, inbetween_sep = ' - ')
+#' brks_labels <- formatBreaks(brks, inbetween_sep = ' - ')
 #' formatBreaks(brks, inbetween_sep = ' - ', suffix_first = " unité")
 #' cut(cont_var, breaks = brks, labels = brks_labels)
-
+#' }
+#' @export
 formatBreaks <- function(
   brks, 
   inbetween_sep = "-",
