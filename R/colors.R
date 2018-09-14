@@ -30,19 +30,17 @@ tam_dpal <- c(
   "#e3cbe8", "#ffefff", "#f8d3ee", "#f3b7d7", "#ef99bc",
   "#ea7b9c", "#e15d78", "#d43d51")
 
-##' Single hue divering color palette
+##' Single hue divering 7 color palette copied from https://carto.com/carto-colors/ : BluYi
 ##' @rdname colors_tam
 ##' @export
 ##' @examples
 ##' pie(rep(1,length(tam_spal)), col=tam_spal)
-tam_spal <- rev(c(
-  "#2a3589",
-  "#4d4897",
-  "#6a5da4",
-  "#8473b2",
-  "#9d8bc1",
-  "#b5a3d0",
-  "#ccbcdf",
-  "#e3d5ef",
-  "#f9f0ff"
-))
+tam_spal <- c(
+  "#f7feae",
+  "#b7e6a5",
+  "#7ccba2",
+  "#46aea0",
+  "#089099",
+  "#00718b",
+  "#045275"
+)
