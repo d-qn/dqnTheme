@@ -2,6 +2,7 @@
 
 export(dimensionWatcher)
 export(formatBreaks)
+export(ggiraphCss)
 export(hc_theme_tg)
 export(htmlLink)
 export(style_tam_highcharter)
