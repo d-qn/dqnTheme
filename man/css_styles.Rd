@@ -7,10 +7,10 @@
 ggiraphCss()
 }
 \description{
-If not imported, saveHTML might to proprely import ggiraph css leading to responsiveness issues with IE
+* For ggiraph graphics: if not imported, saveHTML might to proprely import ggiraph css leading to responsiveness issues with IE
 }
 \examples{
 \dontrun{
-  ggiraphCss
+  ggiraphCss()
 }
 }

@@ -2,60 +2,122 @@
 % Please edit documentation in R/tamTheme.R
 \name{theme_tam}
 \alias{theme_tam}
+\alias{update_geom_font_defaults}
 \title{Tribune de Genève / Tamedia Romandie chart theme}
 \usage{
-theme_tam(ticks = TRUE, xGridLines = T, yAxisNoTitle = F,
-  base_family = "Titillium Web", base_size = 13,
-  axis.title.colour = "#181e4e", axis.colour = "#2b2b2b",
-  axis.ticks.colour = "#2b2b2b")
+theme_tam(ticks = TRUE, grid = "Y", axis = T, yAxisNoTitle = F,
+  base_family = "Roboto Condensed", base_size = 15,
+  plot_title_family = base_family, plot_title_size = 20,
+  plot_title_face = "bold", plot_title_margin = 10,
+  subtitle_family = "Roboto Condensed Light", subtitle_size = 17,
+  subtitle_face = "plain", subtitle_margin = 15,
+  strip_text_family = base_family, strip_text_size = 16,
+  strip_text_face = "plain", caption_family = "Roboto Condensed Light",
+  caption_size = 12, caption_face = "plain", caption_margin = 10,
+  axis_text_size = base_size, axis_title_family = base_family,
+  axis_title_size = 15, axis_title_face = "plain",
+  axis_title_just = "rt", plot_margin = margin(5, 3, 5, 3),
+  grid_col = "#666666", axis_col = "#333333",
+  axis.title.colour = "#2b2b2b", axis.ticks.colour = "#333333")
+
+update_geom_font_defaults(family = "Roboto Condensed", face = "plain",
+  size = 3.5, color = "#2b2b2b")
 }
 \arguments{
 \item{ticks}{\code{logical} show axis ticks?}
 
-\item{xGridLines}{a logical, have horizontal grid lines?}
+\item{grid}{panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)}
+
+\item{axis}{add x or y axes? `TRUE`, `FALSE`, "`xy`"}
 
 \item{yAxisNoTitle}{a logical, should the y title, y-axis and y-ticks be removed? See this example \url{https://rud.is/b/2016/03/16/supreme-annotations/}}
 
-\item{base_family}{Base font family}
+\item{base_family, base_size}{base font family and size}
 
-\item{base_size}{Base font size}
+\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margi}
 
-\item{axis.title.colour, axis.colour, axis.ticks.colour}{a string, a colour}
+\item{subtitle_family, subtitle_face, subtitle_size}{plot subtitle family, face and size}
+
+\item{subtitle_margin}{plot subtitle margin bottom (single numeric value)}
+
+\item{strip_text_family, strip_text_face, strip_text_size}{facet label font family, face and size}
+
+\item{caption_family, caption_face, caption_size, caption_margin}{plot caption family, face, size and margin}
+
+\item{axis_text_size}{font size of axis text}
+
+\item{axis_title_family, axis_title_face, axis_title_size}{axis title font family, face and size}
+
+\item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
+
+\item{plot_margin}{plot margin (specify with [ggplot2::margin()])}
+
+\item{grid_col, axis_col}{grid & axis colors; default to `#666666` and `#333333`}
+
+\item{axis.title.colour, axis.ticks.colour}{a string, a colour}
+
+\item{family, face, size, color}{font family name, face, size and color}
 }
 \description{
-ggplot  theme copied/inspired from https://gist.github.com/hrbrmstr/283850725519e502e70c
+ggplot  theme copied from https://github.com/hrbrmstr/hrbrthemes
+
+Updates [ggplot2::geom_label] and [ggplot2::geom_text] font defaults
 }
 \examples{
 \dontrun{
 require(ggplot2)
-require(extrafont)
+require(dplyr)
 require(tamTheme)
 
 qplot(1:10, 1:10, size = 10:1) + 
   xlab("axis x label") + 
   ylab ("y axis label") + 
-  theme_tam(xGridLines = TRUE) +
+  theme_tam() +
   labs(title = "A catchy title", 
     subtitle = "a descriptive subtitle",
-    caption = label_wrap_gen(80)(
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
+    caption = label_wrap_gen(30)(
+    "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
 
 # based on https://rud.is/b/2016/03/16/supreme-annotations/
 qplot(1:10, 1:10, size = 10:1) + 
   xlab("axis x label") + 
   ylab ("y axis label") + 
-  theme_tam(yAxisNoTitle = TRUE) +
+  theme_tam(yAxisNoTitle = TRUE, grid = 'x') +
   labs(
     title = "A catchy title", 
     subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia") +
   annotate(geom = "label", x = 0.2, y = 10, 
     label = "super unité", hjust = 0, vjust = 0.5, 
-    family = "Titillium Web", label.padding = unit(0.15, "lines"),
+    family = "Roboto Condensed", label.padding = unit(0.15, "lines"),
    label.size = 0)
 
 qplot(mtcars$mpg) + 
   labs(title = "A catchy title", 
   subtitle = "a descriptive subtitle") +
 theme_tam()
+# seminal scatterplot
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+       title="Seminal ggplot2 scatterplot example",
+       subtitle="A plot that is only useful for demonstration purposes",
+       caption="Brought to you by the letter 'g'") +
+  theme_tam()
+
+# seminal bar chart
+
+# note: make this font_rc on Windows
+update_geom_font_defaults(family=font_rc_light)
+
+count(mpg, class) \%>\%
+  ggplot(aes(class, n)) +
+  geom_col() +
+  geom_text(aes(label=n), nudge_y=3) +
+  labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+       title="Seminal ggplot2 bar chart example",
+       subtitle="A plot that is only useful for demonstration purposes",
+       caption="Brought to you by the letter 'g'") +
+  theme_tam(grid="Y") +
+  theme(axis.text.y=element_blank())
 }
 }
