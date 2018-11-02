@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Titillium+Web:200,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700|Roboto:500,700');
 
 /* ensure data labels are not visible over the tooltip:
 http://stackoverflow.com/questions/15130311/highcharts-labels-visible-over-tooltip */
@@ -15,28 +15,80 @@ http://stackoverflow.com/questions/15130311/highcharts-labels-visible-over-toolt
   padding:5px;
 }
 
+/*---- animate image https://stackoverflow.com/questions/33667143/how-to-make-a-blinking-image-in-css3----  */
+/* Firefox old*/
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} 
+
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+/* IE */
+@-ms-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} 
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+} 
+.blink-image {
+    -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
+    -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+    -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
+    animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}     
+    
 body {
   text-rendering: optimizeLegibility;
   max-width:100%;
   margin:2px 15px 2px 5px;
 }
 
-body, h1, h2, h5, h6m .descr, td, table {
-    font-family: 'Titillium Web', sans-serif;
+body, h1, h4, h5, h6m .descr, td, table {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-h3, .h3in, h4 {
-    font-family: 'Playfair Display', sans-serif;
-}
-
-@media only screen and (max-width: 600px) {
-  html { font-size: 13px; }
+.container {
+    margin-top: 0vh; /*   !!!!!!!!!!!!!!!!!!!   manual hack  to reduce margin!!!!*/
 }
 
 #cite {
-  font-weight: 200;
-  font-size: 0.7em;
-  color: #333333;
+  font-weight: 300;
+  font-size: 0.9em;
+  color: #a6a6a6; 
   text-align:right;
   margin-right:5px;
   padding-bottom: 9px;
@@ -48,17 +100,16 @@ h3, .h3in, h4 {
 
 #footer {
   font-weight: 300;
-  background-color: #f2f2f3;
   font-size: 0.75em;
-  color: #595959;
+  color: #8c8c8c;
   padding: 6px;
   margin-bottom:8px;
 }
 
 .tp{
-  font-size: 0.7em;
+  font-size: 0.9em;
   margin-left: 3px;
-  padding: 0 2px 3px 5px;
+  padding: 0px 2px 3px 5px;
 }
 
 .tpsubtitle {
@@ -66,15 +117,13 @@ h3, .h3in, h4 {
   margin-left: 3px;
   font-size: 0.7em;
   margin-bottom: 2px;
-  padding: 0 2px 3px 5px;
+  padding: 0px 2px 3px 5px;
 }
 
 .descr {
- font-size: 1em;
- font-weight: 200;
- color: #1d1f30;
- margin-top: 5px;
- line-height: 130%
+ font-size: 1.2em;
+ font-weight: lighter;
+ color: #999999;
 }
 
 h1 {
@@ -82,17 +131,19 @@ h1 {
 }
 
 h2 {
+   font-family: 'Roboto', sans-serif;
    font-size:1.6em;
    line-height: 125%;
-   font-weight: 700;
-   margin-bottom: 4px;
-   margin-top: 1px;
-   color: #242d75;
+   font-weight: 500;
+   margin-bottom: 3px;
+   margin-top: 5px;
+   color: #4d4d4d;
 }
 
 h3 {
-   font-size:1.3em;
-   color: #1a1a1a;
+   font-family: 'Roboto', sans-serif;
+   font-size:1.4em;
+   color: #404040;
    font-weight: 700;
 }
 
@@ -109,9 +160,13 @@ h3 {
 }
 
 h4 {
+  font-weight: 700;
   font-size: 1.2em;
-  margin-top: 3px;
-  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  padding-top:0;
+  padding-bottom:2px; 
+  border-bottom:1px solid white; 
 }
 
 h5 {
@@ -128,6 +183,12 @@ a:visited {
 
 a, a:visited {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+           font-size: 12px;
+    }
 }
 
 /* https://stackoverflow.com/questions/11984767/how-to-apply-text-align-left-in-the-first-column-and-text-align-right-in-the-oth , specify class table then when creating it*/

@@ -21,7 +21,7 @@ hc_theme_tg <- highcharter::hc_theme(
   chart = list(
    # backgroundColor = "#f2f2f2",
     style = list (
-      fontFamily = 'Titillium Web'
+      fontFamily = 'Roboto Condensed'
     ),
     spacing = c(20, 5, 2, 0)
   ),
@@ -30,7 +30,7 @@ hc_theme_tg <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#1a1a1a',
-      fontFamily = "Titillium Web",
+      fontFamily = "Roboto Condensed",
       fontSize = "1.6em",
       fontWeight = "bold"
     )
@@ -40,14 +40,14 @@ hc_theme_tg <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#262626',
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Roboto Condensed',
       fontWeight = 200,
       fontSize = "1.3em"
     )
   ),
   legend = list(
     itemStyle = list(
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Roboto Condensed',
       fontSize = "1em",
       color = 'black',
       fontWeight = 300
@@ -109,7 +109,7 @@ hc_theme_tg <- highcharter::hc_theme(
     borderRadius = 10,
     padding = 4,
     style = list (
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Roboto Condensed',
       fontSize = "0.9em"
     )
   )
