@@ -4,12 +4,15 @@
 \name{hc_theme_tg}
 \alias{hc_theme_tg}
 \alias{style_tam_highcharter}
+\alias{htmlwidgetgrid_css}
 \title{Highchart(er) TG-Tamedia theme}
 \format{An object of class \code{hc_theme} of length 8.}
 \usage{
 hc_theme_tg
 
 style_tam_highcharter()
+
+htmlwidgetgrid_css()
 }
 \description{
 Some helpers to get a TG look for highcharter
@@ -24,6 +27,8 @@ hchart(mpg, "scatter",
   hc_title(text = "super catchy title") \%>\% 
   hc_subtitle(text = "a description of what the hell is shown")
 style_tam_highcharter()
+# A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
+htmlwidgetgrid_css()
 }
 \seealso{
 http://jkunst.com/highcharter/themes.html#create-themes

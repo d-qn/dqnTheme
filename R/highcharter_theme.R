@@ -122,3 +122,13 @@ hc_theme_tg <- highcharter::hc_theme(
 style_tam_highcharter <- function() {
   list.files(system.file("extdata", package="tamTheme"), 'tam_highcharter.css', full.names = T)
 }
+
+
+##' @rdname tam_highcharter
+##' @export
+##' @examples
+##' # A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
+##' htmlwidgetgrid_css()
+htmlwidgetgrid_css <- function() {
+  list.files(system.file("extdata", package="tamTheme"), 'htmlwdgtgrid.css', full.names = T)
+}
