@@ -2,6 +2,7 @@
 % Please edit documentation in R/tamTheme.R
 \name{theme_tam}
 \alias{theme_tam}
+\alias{theme_tamap}
 \alias{update_geom_font_defaults}
 \title{Tribune de Genève / Tamedia Romandie chart theme}
 \usage{
@@ -19,6 +20,8 @@ theme_tam(ticks = TRUE, grid = "Y", axis = T, yAxisNoTitle = F,
   axis_title_just = "rt", plot_margin = margin(5, 3, 5, 3),
   grid_col = "#666666", axis_col = "#333333",
   axis.title.colour = "#2b2b2b", axis.ticks.colour = "#333333")
+
+theme_tamap(...)
 
 update_geom_font_defaults(family = "Roboto Condensed", face = "plain",
   size = 3.5, color = "#2b2b2b")
@@ -55,6 +58,41 @@ update_geom_font_defaults(family = "Roboto Condensed", face = "plain",
 \item{grid_col, axis_col}{grid & axis colors; default to `#666666` and `#333333`}
 
 \item{axis.title.colour, axis.ticks.colour}{a string, a colour}
+
+\item{...}{Arguments passed on to \code{theme_tam}
+\describe{
+  \item{ticks}{\code{logical} show axis ticks?}
+  \item{grid}{panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)}
+  \item{axis}{add x or y axes? `TRUE`, `FALSE`, "`xy`"}
+  \item{yAxisNoTitle}{a logical, should the y title, y-axis and y-ticks be removed? See this example \url{https://rud.is/b/2016/03/16/supreme-annotations/}}
+  \item{base_family}{base font family and size}
+  \item{base_size}{base font family and size}
+  \item{plot_title_family}{plot title family, face, size and margi}
+  \item{plot_title_face}{plot title family, face, size and margi}
+  \item{plot_title_size}{plot title family, face, size and margi}
+  \item{plot_title_margin}{plot title family, face, size and margi}
+  \item{subtitle_family}{plot subtitle family, face and size}
+  \item{subtitle_face}{plot subtitle family, face and size}
+  \item{subtitle_size}{plot subtitle family, face and size}
+  \item{subtitle_margin}{plot subtitle margin bottom (single numeric value)}
+  \item{strip_text_family}{facet label font family, face and size}
+  \item{strip_text_face}{facet label font family, face and size}
+  \item{strip_text_size}{facet label font family, face and size}
+  \item{caption_family}{plot caption family, face, size and margin}
+  \item{caption_face}{plot caption family, face, size and margin}
+  \item{caption_size}{plot caption family, face, size and margin}
+  \item{caption_margin}{plot caption family, face, size and margin}
+  \item{axis_title_family}{axis title font family, face and size}
+  \item{axis_title_face}{axis title font family, face and size}
+  \item{axis_title_size}{axis title font family, face and size}
+  \item{axis_title_just}{axis title font justification, one of `[blmcrt]`}
+  \item{plot_margin}{plot margin (specify with [ggplot2::margin()])}
+  \item{grid_col}{grid & axis colors; default to `#666666` and `#333333`}
+  \item{axis_col}{grid & axis colors; default to `#666666` and `#333333`}
+  \item{axis_text_size}{font size of axis text}
+  \item{axis.title.colour}{a string, a colour}
+  \item{axis.ticks.colour}{a string, a colour}
+}}
 
 \item{family, face, size, color}{font family name, face, size and color}
 }
@@ -120,4 +158,8 @@ count(mpg, class) \%>\%
   theme_tam(grid="Y") +
   theme(axis.text.y=element_blank())
 }
+require(ggplot2)
+require(dplyr)
+require(tamTheme)
+qplot(1:10, 1:10, size = 10:1) + theme_tamap()
 }

@@ -207,6 +207,32 @@ theme_tam <- function(
   ret
 }
 
+#' theme tam for map: no axis, no ticks, ...
+#' @rdname theme_tam
+#' @inheritDotParams theme_tam
+#' @examples
+#' require(ggplot2)
+#' require(dplyr)
+#' require(tamTheme)
+#' qplot(1:10, 1:10, size = 10:1) + theme_tamap()
+#' @export
+theme_tamap = function(...)
+{
+  theme_new <- theme_tam(...)
+  theme_new <- theme_update(
+    legend.position = "top", 
+    plot.margin = unit(c(0, 0, 0, 0), "lines"),
+    legend.key.height = unit(0.6, "lines"),
+    legend.key.width = unit(3, "lines"),
+    panel.background = element_rect(fill = "transparent", colour = "white"),
+    panel.grid = element_line(colour = 'transparent'),
+    axis.line = element_blank(),
+    axis.ticks = element_blank(), 
+    axis.title = element_blank(),
+    axis.text = element_blank()
+  )
+  theme_new
+}
 
 #' Update matching font defaults for text geoms
 #'
