@@ -183,6 +183,10 @@ theme_tam <- function(
           face=strip_text_face, family=strip_text_family))
   ret <- ret + theme(panel.spacing=grid::unit(2, "lines"))
   
+  # new experimental feature for having fully left aligned subtitle and titles 
+  # https://twitter.com/ClausWilke/status/1166356210783870976
+  ret <- ret + theme(plot.title.position = "plot")
+  
   ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
                      margin=margin(b=plot_title_margin),
                      family=plot_title_family, face=plot_title_face))
