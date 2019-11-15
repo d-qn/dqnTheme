@@ -17,7 +17,7 @@ theme_tam(ticks = TRUE, grid = "Y", axis = T, yAxisNoTitle = F,
   caption_size = 12, caption_face = "plain", caption_margin = 10,
   axis_text_size = base_size, axis_title_family = base_family,
   axis_title_size = 15, axis_title_face = "plain",
-  axis_title_just = "rt", plot_margin = margin(5, 3, 5, 3),
+  axis_title_just = "rt", plot_margin = margin(5, 8, 5, 3),
   grid_col = "#666666", axis_col = "#333333",
   axis.title.colour = "#2b2b2b", axis.ticks.colour = "#333333")
 

@@ -101,7 +101,7 @@ theme_tam <- function(
   axis_title_size = 15,
   axis_title_face = "plain",
   axis_title_just = "rt",
-  plot_margin = margin(5, 3, 5, 3),
+  plot_margin = margin(5, 8, 5, 3),
   grid_col = "#666666",
   axis_col = "#333333",
   axis.title.colour = "#2b2b2b",axis.ticks.colour = "#333333") 
@@ -185,7 +185,7 @@ theme_tam <- function(
   
   # new experimental feature for having fully left aligned subtitle and titles 
   # https://twitter.com/ClausWilke/status/1166356210783870976
-  # ret <- ret + theme(plot.title.position = "plot")
+  ret <- ret + theme(plot.title.position = "plot")
   
   ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
                      margin=margin(b=plot_title_margin),
