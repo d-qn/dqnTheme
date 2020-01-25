@@ -4,8 +4,14 @@
 \alias{formatBreaks}
 \title{Helper for more readable labels when use with \code{cut}}
 \usage{
-formatBreaks(brks, inbetween_sep = "-", prefix_first = "< ",
-  prefix_last = "> ", suffix_first = "", suffix_last = "")
+formatBreaks(
+  brks,
+  inbetween_sep = "-",
+  prefix_first = "< ",
+  prefix_last = "> ",
+  suffix_first = "",
+  suffix_last = ""
+)
 }
 \arguments{
 \item{brks}{numeric vector that will be used to \code{cut}}

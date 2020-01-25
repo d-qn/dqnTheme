@@ -19,7 +19,7 @@ Just a bunch of hex color vectors...
 Color palette as vector (no function). Colors can be sequential (one color), diverging (2 colors)
 }
 \details{
-tam_pal: 8 categorical tam colors
+tam_pal: 8 categorical tam colors 
 
 tam_dpal: diverging color palette with 13 levels
 
