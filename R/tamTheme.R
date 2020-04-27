@@ -121,8 +121,8 @@ theme_tam <- function(
   
   if (inherits(grid, "character") | grid == TRUE | yAxisNoTitle) {
     
-    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.15))
-    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.15))
+    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
+    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
     ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.1))
     
     if (inherits(grid, "character")) {
