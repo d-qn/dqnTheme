@@ -6,7 +6,13 @@
 \alias{tam_dpal}
 \alias{tam_spal}
 \title{Tamedia TG color palette}
-\format{An object of class \code{character} of length 8.}
+\format{
+An object of class \code{character} of length 8.
+
+An object of class \code{character} of length 13.
+
+An object of class \code{character} of length 7.
+}
 \usage{
 tam_pal
 

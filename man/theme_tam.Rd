@@ -7,35 +7,36 @@
 \title{Tribune de Genève / Tamedia Romandie chart theme}
 \usage{
 theme_tam(
-  ticks = TRUE,
-  grid = "Y",
+  ticks = FALSE,
+  grid = "XY",
   axis = T,
   yAxisNoTitle = F,
-  base_family = "Roboto Condensed",
+  base_family = "IBM Plex Sans",
   base_size = 15,
   plot_title_family = base_family,
   plot_title_size = 20,
   plot_title_face = "bold",
   plot_title_margin = 10,
-  subtitle_family = "Roboto Condensed Light",
+  subtitle_family = "IBM Plex Sans Light",
   subtitle_size = 17,
   subtitle_face = "plain",
   subtitle_margin = 15,
   strip_text_family = base_family,
   strip_text_size = 16,
   strip_text_face = "plain",
-  caption_family = "Roboto Condensed Light",
+  caption_family = "IBM Plex Sans Light",
   caption_size = 12,
   caption_face = "plain",
   caption_margin = 10,
-  axis_text_size = base_size,
+  axis_text_size = base_size - (base_size/10),
   axis_title_family = base_family,
   axis_title_size = 15,
-  axis_title_face = "plain",
+  axis_title_face = "bold",
   axis_title_just = "rt",
-  plot_margin = margin(5, 8, 5, 3),
-  grid_col = "#666666",
+  plot_margin = margin(7, 10, 7, 7),
+  grid_col = "#d6d7dd",
   axis_col = "#333333",
+  axis.text.colour = "#333333",
   axis.title.colour = "#2b2b2b",
   axis.ticks.colour = "#333333"
 )
@@ -43,10 +44,10 @@ theme_tam(
 theme_tamap(...)
 
 update_geom_font_defaults(
-  family = "Roboto Condensed",
+  family = "IBM Plex Sans",
   face = "plain",
   size = 3.5,
-  color = "#2b2b2b"
+  color = "#222222"
 )
 }
 \arguments{
@@ -80,7 +81,7 @@ update_geom_font_defaults(
 
 \item{grid_col, axis_col}{grid & axis colors; default to `#666666` and `#333333`}
 
-\item{axis.title.colour, axis.ticks.colour}{a string, a colour}
+\item{axis.title.colour, axis.ticks.colour, axis.text.colour}{a string, a colour}
 
 \item{...}{
   Arguments passed on to \code{\link[=theme_tam]{theme_tam}}
@@ -98,7 +99,6 @@ Updates [ggplot2::geom_label] and [ggplot2::geom_text] font defaults
 \examples{
 \dontrun{
 require(ggplot2)
-require(dplyr)
 require(tamTheme)
 
 qplot(1:10, 1:10, size = 10:1) + 
@@ -120,7 +120,7 @@ qplot(1:10, 1:10, size = 10:1) +
     subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia") +
   annotate(geom = "label", x = 0.2, y = 10, 
     label = "super unité", hjust = 0, vjust = 0.5, 
-    family = "Roboto Condensed", label.padding = unit(0.15, "lines"),
+   label.padding = unit(0.15, "lines"),
    label.size = 0)
 
 qplot(mtcars$mpg) + 
@@ -128,13 +128,19 @@ qplot(mtcars$mpg) +
   subtitle = "a descriptive subtitle") +
 theme_tam()
 # seminal scatterplot
-ggplot(mtcars, aes(mpg, wt)) +
+gp <- ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") +
-  theme_tam()
+       caption="Brought to you by the letter 'g'")
+gp + theme_tam()
+gp + theme_tam(ticks = T)
+gp + theme_tam(axis = F)
+gp + theme_tam(grid = '')
+gp + theme_tam(axis_col = "#d6d7dd")
+gp + theme_tam( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
+
 
 # seminal bar chart
 
@@ -153,7 +159,6 @@ count(mpg, class) \%>\%
   theme(axis.text.y=element_blank())
 }
 require(ggplot2)
-require(dplyr)
 require(tamTheme)
 qplot(1:10, 1:10, size = 10:1) + theme_tamap()
 }

@@ -18,7 +18,7 @@
 #' @param plot_margin plot margin (specify with [ggplot2::margin()])
 #' @param grid_col,axis_col grid & axis colors; default to `#666666` and `#333333`
 #' @param axis_text_size font size of axis text
-#' @param axis.title.colour,axis.ticks.colour a string, a colour
+#' @param axis.title.colour,axis.ticks.colour,axis.text.colour a string, a colour
 #' @import ggplot2 
 #' @import gridExtra
 #' @importFrom grid unit
@@ -27,7 +27,6 @@
 #' @examples
 #' \dontrun{
 #' require(ggplot2)
-#' require(dplyr)
 #' require(tamTheme)
 #' 
 #' qplot(1:10, 1:10, size = 10:1) + 
@@ -49,7 +48,7 @@
 #'     subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia") +
 #'   annotate(geom = "label", x = 0.2, y = 10, 
 #'     label = "super unité", hjust = 0, vjust = 0.5, 
-#'     family = "Roboto Condensed", label.padding = unit(0.15, "lines"),
+#'    label.padding = unit(0.15, "lines"),
 #'    label.size = 0)
 #'
 #' qplot(mtcars$mpg) + 
@@ -57,14 +56,20 @@
 #'   subtitle = "a descriptive subtitle") +
 #' theme_tam()
 #' # seminal scatterplot
-#' ggplot(mtcars, aes(mpg, wt)) +
+#' gp <- ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
 #'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
-#'        caption="Brought to you by the letter 'g'") +
-#'   theme_tam()
-#'
+#'        caption="Brought to you by the letter 'g'")
+#' gp + theme_tam()
+#' gp + theme_tam(ticks = T)
+#' gp + theme_tam(axis = F)
+#' gp + theme_tam(grid = '')
+#' gp + theme_tam(axis_col = "#d6d7dd")
+#' gp + theme_tam( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
+#' 
+#' 
 #' # seminal bar chart
 #'
 #' # note: make this font_rc on Windows
@@ -82,29 +87,33 @@
 #'   theme(axis.text.y=element_blank())
 #' }
 theme_tam <- function(
-  ticks = TRUE, 
-  grid = 'Y',
+  ticks = FALSE, 
+  grid = 'XY',
   axis = T,
   yAxisNoTitle = F,
-  base_family = "Roboto Condensed", base_size = 15,
+  base_family = "IBM Plex Sans", base_size = 15,
   plot_title_family = base_family, plot_title_size = 20,
   plot_title_face = "bold", plot_title_margin = 10,
   
-  subtitle_family = "Roboto Condensed Light",subtitle_size = 17,
+  subtitle_family = "IBM Plex Sans Light", subtitle_size = 17,
   subtitle_face = "plain", subtitle_margin = 15,
   
-  strip_text_family = base_family, strip_text_size = 16, strip_text_face = "plain",
-  caption_family="Roboto Condensed Light", caption_size = 12,
+  strip_text_family = base_family, 
+  strip_text_size = 16, 
+  strip_text_face = "plain",
+  caption_family= "IBM Plex Sans Light", caption_size = 12,
   caption_face = "plain", caption_margin = 10,
-  axis_text_size = base_size,
+  axis_text_size = base_size - (base_size/10),
   axis_title_family = base_family,
   axis_title_size = 15,
-  axis_title_face = "plain",
+  axis_title_face = "bold",
   axis_title_just = "rt",
-  plot_margin = margin(5, 8, 5, 3),
-  grid_col = "#666666",
+  plot_margin = margin(7, 10, 7, 7),
+  grid_col = "#d6d7dd",
   axis_col = "#333333",
-  axis.title.colour = "#2b2b2b",axis.ticks.colour = "#333333") 
+  axis.text.colour = "#333333",
+  axis.title.colour = "#2b2b2b", 
+  axis.ticks.colour = "#333333") 
 {
   ret <- theme_minimal(base_family = base_family, base_size = base_size)
   ret <- ret + theme(legend.background=element_blank())
@@ -112,9 +121,9 @@ theme_tam <- function(
   
   if (inherits(grid, "character") | grid == TRUE | yAxisNoTitle) {
     
-    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2, linetype = "dotted"))
-    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2, linetype = "dotted"))
-    ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.15, linetype = "dotted"))
+    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
+    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
+    ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.15))
     
     if (inherits(grid, "character")) {
       if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x=element_blank())
@@ -128,22 +137,22 @@ theme_tam <- function(
   }
   
   if (inherits(axis, "character") | axis == TRUE) {
-    ret <- ret + theme(axis.line=element_line(color=axis_col, size=0.15))
+    ret <- ret + theme(axis.line=element_line(color=axis_col, size=0.25))
     if (inherits(axis, "character")) {
       axis <- tolower(axis)
       if (regexpr("x", axis)[1] < 0) {
         ret <- ret + theme(axis.line.x=element_blank())
       } else {
-        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.25))
       }
       if (regexpr("y", axis)[1] < 0) {
         ret <- ret + theme(axis.line.y=element_blank())
       } else {
-        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+        ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.25))
       }
     } else {
-      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.15))
-      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.15))
+      ret <- ret + theme(axis.line.x=element_line(color=axis_col, size=0.25))
+      ret <- ret + theme(axis.line.y=element_line(color=axis_col, size=0.25))
     }
   } else {
     ret <- ret + theme(axis.line=element_blank())
@@ -157,16 +166,20 @@ theme_tam <- function(
     ret <- ret + theme(axis.ticks = element_line(size=0.1))
     ret <- ret + theme(axis.ticks.x = element_line(size=0.1))
     ret <- ret + theme(axis.ticks.y = element_line(size=0.1))
-    ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
+    ret <- ret + theme(axis.ticks.length = grid::unit(4, "pt"))
   }
   
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   
   ret <- ret + 
-    theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0)))
+    theme(axis.text.x=element_text(
+      colour = axis.text.colour,
+      size=axis_text_size, margin=margin(t=0)))
   ret <- ret + 
-    theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0)))
+    theme(axis.text.y=element_text(
+      colour = axis.text.colour,
+      size=axis_text_size, margin=margin(r=0)))
   ret <- ret + 
     theme(axis.title=element_text(size=axis_title_size, family=axis_title_family))
   ret <- ret + 
@@ -189,13 +202,17 @@ theme_tam <- function(
   
   ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
                      margin=margin(b=plot_title_margin),
-                     family=plot_title_family, face=plot_title_face))
+                     family=plot_title_family, face=plot_title_face,
+                     colour = "#202346"))
   ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size,
                      margin=margin(b=subtitle_margin),
-                     family=subtitle_family, face=subtitle_face))
+                     family=subtitle_family, face=subtitle_face,
+                     colour = "#999baa"))
   ret <- ret + theme(plot.caption=element_text(hjust=1, size=caption_size,
                      margin=margin(t=caption_margin),
-                     family=caption_family, face=caption_face))
+                     family=caption_family, 
+                     face=caption_face, 
+                     colour = "#a1a2a3"))
   ret <- ret + theme(plot.margin=plot_margin)
   
   if(yAxisNoTitle) {
@@ -216,7 +233,6 @@ theme_tam <- function(
 #' @inheritDotParams theme_tam
 #' @examples
 #' require(ggplot2)
-#' require(dplyr)
 #' require(tamTheme)
 #' qplot(1:10, 1:10, size = 10:1) + theme_tamap()
 #' @export
@@ -244,8 +260,11 @@ theme_tamap = function(...)
 #' @rdname theme_tam
 #' @param family,face,size,color font family name, face, size and color
 #' @export
-update_geom_font_defaults <- function(family="Roboto Condensed", face="plain", size=3.5,
-                                      color = "#2b2b2b") {
-  update_geom_defaults("text", list(family=family, face=face, size=size, color=color))
-  update_geom_defaults("label", list(family=family, face=face, size=size, color=color))
+update_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
+                                      color = "#222222") {
+  update_geom_defaults("text", 
+                       list(family=family, face=face, size=size, color=color))
+  update_geom_defaults("label", 
+                       list(family=family, face=face, size=size, color=color))
 }
+

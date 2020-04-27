@@ -6,7 +6,9 @@
 \alias{style_tam_highcharter}
 \alias{htmlwidgetgrid_css}
 \title{Highchart(er) TG-Tamedia theme}
-\format{An object of class \code{hc_theme} of length 8.}
+\format{
+An object of class \code{hc_theme} of length 8.
+}
 \usage{
 hc_theme_tg
 

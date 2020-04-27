@@ -4,7 +4,9 @@
 \name{dimensionWatcher}
 \alias{dimensionWatcher}
 \title{html code to call Tamedia dimensionWatcher}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 dimensionWatcher
 }
