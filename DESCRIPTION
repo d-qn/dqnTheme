@@ -1,16 +1,16 @@
 Package: tamTheme
 Type: Package
-Title: Tamedia Romandie - TdG chart themes, colours and convenience functions
-Version: 0.6
+Title: Tamedia Romandie / TX group - Chart themes, colours and convenience functions
+Version: 0.7
 Date: 2018-07-30
 Author: Duc-Quang Nguyen
-Maintainer: Duc-Quang Nguyen <duc-quang.nguyen@tdg.ch>
+Maintainer: Duc-Quang Nguyen <duc-quang.nguyen@tamedia.ch>
 Imports:
     ggplot2 (>= 2.1.0.9),
     extrafont,
     gridExtra,
     highcharter
-Description: Themes, colors and convienence functions. A mixed bag of stuff
+Description: Themes, colors and convienence functions. A mixed bag of stuff.
 Encoding: UTF-8
-License: GNU
+License: GPL-3
 RoxygenNote: 7.1.0
