@@ -37,8 +37,8 @@ theme_tam(
   grid_col = "#d6d7dd",
   axis_col = "#333333",
   axis.text.colour = "#333333",
-  axis.title.colour = "#2b2b2b",
-  axis.ticks.colour = "#333333"
+  axis.title.colour = "#202346",
+  axis.ticks.colour = "#393d60"
 )
 
 theme_tamap(...)

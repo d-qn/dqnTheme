@@ -112,8 +112,8 @@ theme_tam <- function(
   grid_col = "#d6d7dd",
   axis_col = "#333333",
   axis.text.colour = "#333333",
-  axis.title.colour = "#2b2b2b", 
-  axis.ticks.colour = "#333333") 
+  axis.title.colour = "#202346", 
+  axis.ticks.colour = "#393d60") 
 {
   ret <- theme_minimal(base_family = base_family, base_size = base_size)
   ret <- ret + theme(legend.background=element_blank())
@@ -181,13 +181,14 @@ theme_tam <- function(
       colour = axis.text.colour,
       size=axis_text_size, margin=margin(r=0)))
   ret <- ret + 
-    theme(axis.title=element_text(size=axis_title_size, family=axis_title_family))
+    theme(axis.title=element_text(
+      size=axis_title_size, family=axis_title_family, colour = axis.title.colour))
   ret <- ret + 
     theme(axis.title.x=element_text(hjust=xj, size=axis_title_size,
-          family=axis_title_family, face=axis_title_face))
+          family=axis_title_family, face=axis_title_face, colour = axis.title.colour))
   ret <- ret + 
     theme(axis.title.y=element_text(hjust=yj, size=axis_title_size,
-          family=axis_title_family, face=axis_title_face))
+          family=axis_title_family, face=axis_title_face, colour = axis.title.colour))
   ret <- ret + 
     theme(axis.title.y.right=element_text(hjust=yj, size=axis_title_size, 
           angle=90,family=axis_title_family, face=axis_title_face))
