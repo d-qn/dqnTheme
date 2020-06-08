@@ -3,14 +3,19 @@
 \docType{data}
 \name{hc_theme_tg}
 \alias{hc_theme_tg}
+\alias{hc_theme_TA}
 \alias{style_tam_highcharter}
 \alias{htmlwidgetgrid_css}
 \title{Highchart(er) TG-Tamedia theme}
 \format{
 An object of class \code{hc_theme} of length 8.
+
+An object of class \code{hc_theme} of length 8.
 }
 \usage{
 hc_theme_tg
+
+hc_theme_TA
 
 style_tam_highcharter()
 
@@ -27,6 +32,14 @@ hchart(mpg, "scatter",
   hcaes(x = displ, y = hwy, group = class)) \%>\% 
   hc_add_theme(hc_theme_tg) \%>\% 
   hc_title(text = "super catchy title") \%>\% 
+  hc_subtitle(text = "a description of what the hell is shown")
+require(highcharter)
+require(tamTheme)
+data(diamonds, mpg, package = "ggplot2")
+hchart(mpg, "scatter", 
+  hcaes(x = displ, y = hwy, group = class)) \%>\% 
+  hc_add_theme(hc_theme_TA) \%>\% 
+  hc_title(text = "Super catchy title") \%>\% 
   hc_subtitle(text = "a description of what the hell is shown")
 style_tam_highcharter()
 # A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
