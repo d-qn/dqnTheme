@@ -8,7 +8,7 @@
 ##' dimensionWatcher
 ##' }
 
-dimensionWatcher <- '<script src="https://files.newsnetz.ch/scripts/dimension_watcher.js"></script>
+dimensionWatcher <- '<script src="https://interaktiv.tagesanzeiger.ch/static/dimension_watcher.js"></script>
   <script>
   DimensionWatcher.enableParentNotification(
     function() {

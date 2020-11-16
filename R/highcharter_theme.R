@@ -131,7 +131,7 @@ hc_theme_TA <- highcharter::hc_theme(
   chart = list(
     # backgroundColor = "#f2f2f2",
     style = list (
-      fontFamily = 'IBM Plex Sans Light'
+      fontFamily = 'IBM Plex Sans'
     ),
     spacing = c(20, 5, 2, 0)
   ),
@@ -142,7 +142,7 @@ hc_theme_TA <- highcharter::hc_theme(
       color = '#202346',
       fontFamily = "IBM Plex Sans",
       fontSize = "1.6em",
-      fontWeight = 700
+      fontWeight = "bold"
     )
   ),
   subtitle = list(
@@ -150,7 +150,7 @@ hc_theme_TA <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#5c5f78',
-      fontFamily = 'IBM Plex Sans Light',
+      fontFamily = 'IBM Plex Sans',
       fontWeight = 300,
       fontSize = "1.3em"
     )
@@ -232,6 +232,16 @@ hc_theme_TA <- highcharter::hc_theme(
 style_tam_highcharter <- function() {
   list.files(system.file("extdata", package="tamTheme"), 'tam_highcharter.css', full.names = T)
 }
+
+
+##' @rdname tam_highcharter
+##' @export
+##' @examples
+##' style_ta_highcharter()
+style_ta_highcharter <- function() {
+  list.files(system.file("extdata", package="tamTheme"), 'ta_highcharter.css', full.names = T)
+}
+
 
 ##' @rdname tam_highcharter
 ##' @export
