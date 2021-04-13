@@ -23,20 +23,20 @@
 #' @import gridExtra
 #' @importFrom grid unit
 #' @importFrom extrafont loadfonts choose_font
+#' @importFrom ggtext element_textbox_simple
 #' @export
 #' @examples
 #' \dontrun{
 #' require(ggplot2)
-#' require(tamTheme)
+#' require(dqnTheme)
 #' 
 #' qplot(1:10, 1:10, size = 10:1) + 
 #'   xlab("axis x label") + 
 #'   ylab ("y axis label") + 
 #'   theme_tam() +
-#'   labs(title = "A catchy title", 
-#'     subtitle = "a descriptive subtitle",
-#'     caption = label_wrap_gen(30)(
-#'     "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
+#'   labs(title = "A catchy long title, that should be wrapped which is pretty awesome", 
+#'     subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
+#'     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
 #' 
 #' # based on https://rud.is/b/2016/03/16/supreme-annotations/
 #' qplot(1:10, 1:10, size = 10:1) + 
@@ -45,7 +45,7 @@
 #'   theme_tam(yAxisNoTitle = TRUE, grid = 'x') +
 #'   labs(
 #'     title = "A catchy title", 
-#'     subtitle = "a descriptive subtitle", caption = "source: ofs | Tamedia") +
+#'     subtitle = "A descriptive subtitle", caption = "source: ofs | Tamedia") +
 #'   annotate(geom = "label", x = 0.2, y = 10, 
 #'     label = "super unité", hjust = 0, vjust = 0.5, 
 #'    label.padding = unit(0.15, "lines"),
@@ -68,47 +68,37 @@
 #' gp + theme_tam(grid = '')
 #' gp + theme_tam(axis_col = "#d6d7dd")
 #' gp + theme_tam( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
-#' 
-#' 
-#' # seminal bar chart
-#'
-#' # note: make this font_rc on Windows
-#' update_geom_font_defaults(family=font_rc_light)
-#'
-#' count(mpg, class) %>%
-#'   ggplot(aes(class, n)) +
-#'   geom_col() +
-#'   geom_text(aes(label=n), nudge_y=3) +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
-#'        title="Seminal ggplot2 bar chart example",
-#'        subtitle="A plot that is only useful for demonstration purposes",
-#'        caption="Brought to you by the letter 'g'") +
-#'   theme_tam(grid="Y") +
-#'   theme(axis.text.y=element_blank())
 #' }
 theme_tam <- function(
   ticks = FALSE, 
   grid = 'XY',
   axis = T,
   yAxisNoTitle = F,
-  base_family = "IBM Plex Sans", base_size = 15,
-  plot_title_family = base_family, plot_title_size = 20,
-  plot_title_face = "bold", plot_title_margin = 10,
+  base_family = "IBM Plex Sans", 
+  base_size = 15,
+  plot_title_family = base_family, 
+  plot_title_size = 20,
+  plot_title_face = "bold", 
+  plot_title_margin = 12,
   
-  subtitle_family = "IBM Plex Sans Light", subtitle_size = 17,
-  subtitle_face = "plain", subtitle_margin = 15,
+  subtitle_family = "IBM Plex Sans Light", 
+  subtitle_size = 16,
+  subtitle_face = "plain", 
+  subtitle_margin = 8,
   
   strip_text_family = base_family, 
   strip_text_size = 16, 
   strip_text_face = "plain",
-  caption_family= "IBM Plex Sans Light", caption_size = 12,
-  caption_face = "plain", caption_margin = 10,
+  caption_family= "IBM Plex Sans Light", 
+  caption_size = 11,
+  caption_face = "plain", 
+  caption_margin = 12,
   axis_text_size = base_size - (base_size/10),
   axis_title_family = base_family,
   axis_title_size = 15,
   axis_title_face = "bold",
   axis_title_just = "rt",
-  plot_margin = margin(7, 10, 7, 7),
+  plot_margin = margin(9, 10, 7, 3),
   grid_col = "#d6d7dd",
   axis_col = "#333333",
   axis.text.colour = "#333333",
@@ -197,24 +187,53 @@ theme_tam <- function(
           face=strip_text_face, family=strip_text_family))
   ret <- ret + theme(panel.spacing=grid::unit(2, "lines"))
   
-  # new experimental feature for having fully left aligned subtitle and titles 
-  # https://twitter.com/ClausWilke/status/1166356210783870976
   ret <- ret + theme(plot.title.position = "plot")
   
-  ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
-                     margin=margin(b=plot_title_margin),
-                     family=plot_title_family, face=plot_title_face,
-                     colour = "#202346"))
-  ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size,
-                     margin=margin(b=subtitle_margin),
-                     family=subtitle_family, face=subtitle_face,
-                     colour = "#999baa"))
-  ret <- ret + theme(plot.caption=element_text(hjust=1, size=caption_size,
-                     margin=margin(t=caption_margin),
-                     family=caption_family, 
-                     face=caption_face, 
-                     colour = "#a1a2a3"))
-  ret <- ret + theme(plot.margin=plot_margin)
+  ret <- ret + theme(
+    # plot.title=element_text(hjust=0, size=plot_title_size,
+    #                  margin=margin(b=plot_title_margin),
+    #                  family=plot_title_family, face=plot_title_face,
+    #                  colour = "#202346")
+    plot.title = element_textbox_simple(
+      size = plot_title_size,
+      family = plot_title_family, 
+      face = plot_title_face,
+      colour = "#202346",
+      margin = margin(b=plot_title_margin)
+    ))
+  ret <- ret + theme(
+    # plot.subtitle=element_text(hjust=0, size=subtitle_size,
+    #                  margin=margin(b=subtitle_margin),
+    #                  family=subtitle_family, face=subtitle_face,
+    #                  colour = "#999baa")
+    plot.subtitle = element_textbox_simple(
+      size=subtitle_size,
+      margin=margin(b=subtitle_margin),
+      family=subtitle_family, 
+      face=subtitle_face,
+      colour = "#999baa"
+    ))
+  ret <- ret + theme(
+    # plot.caption=element_text(
+    #   hjust=1, size=caption_size,
+    #   margin=margin(t=caption_margin),
+    #   family=caption_family, 
+    #   face=caption_face, 
+    #   colour = "#a1a2a3")
+    plot.caption = element_textbox_simple(
+      halign = 1,
+      size=caption_size,
+      margin=margin(t=caption_margin),
+      family=caption_family,
+      face=caption_face,
+      colour = "#a1a2a3")
+    )
+  ret <- ret + theme(
+    plot.margin=plot_margin,
+    legend.position = "top",
+    legend.justification = "left",
+    legend.direction = "horizontal"
+  )
   
   if(yAxisNoTitle) {
     ret <- ret + theme(
@@ -234,7 +253,7 @@ theme_tam <- function(
 #' @inheritDotParams theme_tam
 #' @examples
 #' require(ggplot2)
-#' require(tamTheme)
+#' require(dqnTheme)
 #' qplot(1:10, 1:10, size = 10:1) + theme_tamap()
 #' @export
 theme_tamap = function(...)

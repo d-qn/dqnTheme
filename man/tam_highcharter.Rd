@@ -29,7 +29,7 @@ Some helpers to get a TG look for highcharter
 }
 \examples{
 require(highcharter)
-require(tamTheme)
+require(dqnTheme)
 data(diamonds, mpg, package = "ggplot2")
 hchart(mpg, "scatter", 
   hcaes(x = displ, y = hwy, group = class)) \%>\% 
@@ -37,7 +37,7 @@ hchart(mpg, "scatter",
   hc_title(text = "super catchy title") \%>\% 
   hc_subtitle(text = "a description of what the hell is shown")
 require(highcharter)
-require(tamTheme)
+require(dqnTheme)
 data(diamonds, mpg, package = "ggplot2")
 hchart(mpg, "scatter", 
   hcaes(x = displ, y = hwy, group = class)) \%>\% 

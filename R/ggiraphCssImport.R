@@ -9,17 +9,17 @@
 ##'   ggiraphCss()
 ##' }
 ggiraphCss <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'ggiraph.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'ggiraph.css', full.names = T)
 }
 
 ##' Normalizer css: \url{https://necolas.github.io/normalize.css/}
 ##' @export
 normalizeCss <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'normalize.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'normalize.css', full.names = T)
 }
 
 ##' Bootstrap min css
 ##' @export
 bootstrapCss <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'bootstrap.min.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'bootstrap.min.css', full.names = T)
 }

@@ -8,7 +8,7 @@
 #' @seealso http://jkunst.com/highcharter/themes.html#create-themes
 #' @examples
 #' require(highcharter)
-#' require(tamTheme)
+#' require(dqnTheme)
 #' data(diamonds, mpg, package = "ggplot2")
 #' hchart(mpg, "scatter", 
 #'   hcaes(x = displ, y = hwy, group = class)) %>% 
@@ -115,17 +115,17 @@ hc_theme_tg <- highcharter::hc_theme(
   )
 )
 
-##' @rdname tam_highcharter
-##' @export
-##' @examples
-##' require(highcharter)
-##' require(tamTheme)
-##' data(diamonds, mpg, package = "ggplot2")
-##' hchart(mpg, "scatter", 
-##'   hcaes(x = displ, y = hwy, group = class)) %>% 
-##'   hc_add_theme(hc_theme_TA) %>% 
-##'   hc_title(text = "Super catchy title") %>% 
-##'   hc_subtitle(text = "a description of what the hell is shown")
+#' @rdname tam_highcharter
+#' @export
+#' @examples
+#' require(highcharter)
+#' require(dqnTheme)
+#' data(diamonds, mpg, package = "ggplot2")
+#' hchart(mpg, "scatter", 
+#'   hcaes(x = displ, y = hwy, group = class)) %>% 
+#'   hc_add_theme(hc_theme_TA) %>% 
+#'   hc_title(text = "Super catchy title") %>% 
+#'   hc_subtitle(text = "a description of what the hell is shown")
 hc_theme_TA <- highcharter::hc_theme(
   colors = tam_pal,
   chart = list(
@@ -225,29 +225,27 @@ hc_theme_TA <- highcharter::hc_theme(
   )
 )
 
-##' @rdname tam_highcharter
-##' @export
-##' @examples
-##' style_tam_highcharter()
+#' @rdname tam_highcharter
+#' @export
+#' @examples
+#' style_tam_highcharter()
 style_tam_highcharter <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'tam_highcharter.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'tam_highcharter.css', full.names = T)
 }
 
-
-##' @rdname tam_highcharter
-##' @export
-##' @examples
-##' style_ta_highcharter()
+#' @rdname tam_highcharter
+#' @export
+#' @examples
+#' style_ta_highcharter()
 style_ta_highcharter <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'ta_highcharter.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'ta_highcharter.css', full.names = T)
 }
 
-
-##' @rdname tam_highcharter
-##' @export
-##' @examples
-##' # A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
-##' htmlwidgetgrid_css()
+#' @rdname tam_highcharter
+#' @export
+#' @examples
+#' # A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
+#' htmlwidgetgrid_css()
 htmlwidgetgrid_css <- function() {
-  list.files(system.file("extdata", package="tamTheme"), 'htmlwdgtgrid.css', full.names = T)
+  list.files(system.file("extdata", package="dqnTheme"), 'htmlwdgtgrid.css', full.names = T)
 }

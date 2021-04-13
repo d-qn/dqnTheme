@@ -1,12 +1,13 @@
-Package: tamTheme
+Package: dqnTheme
 Type: Package
-Title: Tamedia Romandie / TX group - Chart themes, colours and convenience functions
-Version: 0.7
-Date: 2018-07-30
+Title: Chart themes, colours and convenience functions
+Version: 0.77
+Date: 2021-04-13
 Author: Duc-Quang Nguyen
-Maintainer: Duc-Quang Nguyen <duc-quang.nguyen@tamedia.ch>
+Maintainer: Duc-Quang Nguyen <ducquang.nguyen@gmail.com>
 Imports:
     ggplot2 (>= 2.1.0.9),
+    ggtext,
     extrafont,
     gridExtra,
     highcharter
