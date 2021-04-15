@@ -34,7 +34,7 @@
 #'   xlab("axis x label") + 
 #'   ylab ("y axis label") + 
 #'   theme_tam() +
-#'   labs(title = "A catchy long title, that should be wrapped which is pretty awesome", 
+#'   labs(title = "A catchy long <span style = 'color:red;'>title</span>, that should be wrapped which is pretty awesome", 
 #'     subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
 #'     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
 #' 
@@ -82,7 +82,7 @@ theme_tam <- function(
   plot_title_margin = 12,
   
   subtitle_family = "IBM Plex Sans Light", 
-  subtitle_size = 16,
+  subtitle_size = 15,
   subtitle_face = "plain", 
   subtitle_margin = 8,
   
@@ -98,7 +98,7 @@ theme_tam <- function(
   axis_title_size = 15,
   axis_title_face = "bold",
   axis_title_just = "rt",
-  plot_margin = margin(9, 10, 7, 3),
+  plot_margin = margin(9, 12, 7, 3),
   grid_col = "#d6d7dd",
   axis_col = "#333333",
   axis.text.colour = "#333333",
@@ -208,7 +208,8 @@ theme_tam <- function(
     #                  colour = "#999baa")
     plot.subtitle = element_textbox_simple(
       size=subtitle_size,
-      margin=margin(b=subtitle_margin),
+      lineheight = 1.2,
+      margin = margin(b=subtitle_margin),
       family=subtitle_family, 
       face=subtitle_face,
       colour = "#999baa"

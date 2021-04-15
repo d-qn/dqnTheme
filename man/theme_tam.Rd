@@ -18,7 +18,7 @@ theme_tam(
   plot_title_face = "bold",
   plot_title_margin = 12,
   subtitle_family = "IBM Plex Sans Light",
-  subtitle_size = 16,
+  subtitle_size = 15,
   subtitle_face = "plain",
   subtitle_margin = 8,
   strip_text_family = base_family,
@@ -33,7 +33,7 @@ theme_tam(
   axis_title_size = 15,
   axis_title_face = "bold",
   axis_title_just = "rt",
-  plot_margin = margin(9, 10, 7, 3),
+  plot_margin = margin(9, 12, 7, 3),
   grid_col = "#d6d7dd",
   axis_col = "#333333",
   axis.text.colour = "#333333",
@@ -105,7 +105,7 @@ qplot(1:10, 1:10, size = 10:1) +
   xlab("axis x label") + 
   ylab ("y axis label") + 
   theme_tam() +
-  labs(title = "A catchy long title, that should be wrapped which is pretty awesome", 
+  labs(title = "A catchy long <span style = 'color:red;'>title</span>, that should be wrapped which is pretty awesome", 
     subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
 
