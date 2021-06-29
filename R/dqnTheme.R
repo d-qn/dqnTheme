@@ -45,7 +45,7 @@
 #'   theme_lt(yAxisNoTitle = TRUE, grid = 'x') +
 #'   labs(
 #'     title = "A catchy title", 
-#'     subtitle = "A descriptive subtitle", caption = "source: ofs | Tamedia") +
+#'     subtitle = "A descriptive subtitle", caption = "source: ofs | Le Temps") +
 #'   annotate(geom = "label", x = 0.2, y = 10, 
 #'     label = "super unité", hjust = 0, vjust = 0.5, 
 #'    label.padding = unit(0.15, "lines"),
@@ -58,7 +58,7 @@
 #' # seminal scatterplot
 #' gp <- ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
-#'   labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'")

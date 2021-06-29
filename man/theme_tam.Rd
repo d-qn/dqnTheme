@@ -3,7 +3,6 @@
 \name{theme_tam}
 \alias{theme_tam}
 \alias{theme_tamap}
-\alias{update_geom_font_defaults}
 \title{Tribune de Genève / Tamedia Romandie chart theme}
 \usage{
 theme_tam(
@@ -42,13 +41,6 @@ theme_tam(
 )
 
 theme_tamap(...)
-
-update_geom_font_defaults(
-  family = "IBM Plex Sans",
-  face = "plain",
-  size = 3.5,
-  color = "#222222"
-)
 }
 \arguments{
 \item{ticks}{\code{logical} show axis ticks?}
@@ -88,13 +80,9 @@ update_geom_font_defaults(
   \describe{
     \item{\code{}}{}
   }}
-
-\item{family, face, size, color}{font family name, face, size and color}
 }
 \description{
 ggplot  theme copied from https://github.com/hrbrmstr/hrbrthemes
-
-Updates [ggplot2::geom_label] and [ggplot2::geom_text] font defaults
 }
 \examples{
 \dontrun{
