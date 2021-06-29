@@ -12,5 +12,7 @@ ggiraphCss()
 \examples{
 \dontrun{
   ggiraphCss()
+  normalizeCss()
+  bootstrapCss()
 }
 }

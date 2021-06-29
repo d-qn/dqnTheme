@@ -1,8 +1,8 @@
-#' Le Temps and Heidi.news ggplot2 themes
+#' Tribune de Genève / Tamedia Romandie chart theme
 #'
-#' Built from https://github.com/hrbrmstr/hrbrthemes
+#' ggplot  theme copied from https://github.com/hrbrmstr/hrbrthemes
 #'
-#' @rdname theme_lt
+#' @rdname theme_tam
 #' @param ticks \code{logical} show axis ticks?
 #' @param grid panel grid (`TRUE`, `FALSE`, or a combination of `X`, `x`, `Y`, `y`)
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
@@ -33,7 +33,7 @@
 #' qplot(1:10, 1:10, size = 10:1) + 
 #'   xlab("axis x label") + 
 #'   ylab ("y axis label") + 
-#'   theme_lt() +
+#'   theme_tam() +
 #'   labs(title = "A catchy long <span style = 'color:red;'>title</span>, that should be wrapped which is pretty awesome", 
 #'     subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
 #'     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
@@ -42,7 +42,7 @@
 #' qplot(1:10, 1:10, size = 10:1) + 
 #'   xlab("axis x label") + 
 #'   ylab ("y axis label") + 
-#'   theme_lt(yAxisNoTitle = TRUE, grid = 'x') +
+#'   theme_tam(yAxisNoTitle = TRUE, grid = 'x') +
 #'   labs(
 #'     title = "A catchy title", 
 #'     subtitle = "A descriptive subtitle", caption = "source: ofs | Tamedia") +
@@ -54,7 +54,7 @@
 #' qplot(mtcars$mpg) + 
 #'   labs(title = "A catchy title", 
 #'   subtitle = "a descriptive subtitle") +
-#' theme_lt()
+#' theme_tam()
 #' # seminal scatterplot
 #' gp <- ggplot(mtcars, aes(mpg, wt)) +
 #'   geom_point() +
@@ -62,14 +62,14 @@
 #'        title="Seminal ggplot2 scatterplot example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
 #'        caption="Brought to you by the letter 'g'")
-#' gp + theme_lt()
-#' gp + theme_lt(ticks = T)
-#' gp + theme_lt(axis = F)
-#' gp + theme_lt(grid = '')
-#' gp + theme_lt(axis_col = "#d6d7dd")
-#' gp + theme_lt( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
+#' gp + theme_tam()
+#' gp + theme_tam(ticks = T)
+#' gp + theme_tam(axis = F)
+#' gp + theme_tam(grid = '')
+#' gp + theme_tam(axis_col = "#d6d7dd")
+#' gp + theme_tam( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
 #' }
-theme_lt <- function(
+theme_tam <- function(
   ticks = FALSE, 
   grid = 'XY',
   axis = T,
@@ -190,6 +190,10 @@ theme_lt <- function(
   ret <- ret + theme(plot.title.position = "plot")
   
   ret <- ret + theme(
+    # plot.title=element_text(hjust=0, size=plot_title_size,
+    #                  margin=margin(b=plot_title_margin),
+    #                  family=plot_title_family, face=plot_title_face,
+    #                  colour = "#202346")
     plot.title = element_textbox_simple(
       size = plot_title_size,
       family = plot_title_family, 
@@ -198,6 +202,10 @@ theme_lt <- function(
       margin = margin(b=plot_title_margin)
     ))
   ret <- ret + theme(
+    # plot.subtitle=element_text(hjust=0, size=subtitle_size,
+    #                  margin=margin(b=subtitle_margin),
+    #                  family=subtitle_family, face=subtitle_face,
+    #                  colour = "#999baa")
     plot.subtitle = element_textbox_simple(
       size=subtitle_size,
       lineheight = 1.2,
@@ -207,6 +215,12 @@ theme_lt <- function(
       colour = "#999baa"
     ))
   ret <- ret + theme(
+    # plot.caption=element_text(
+    #   hjust=1, size=caption_size,
+    #   margin=margin(t=caption_margin),
+    #   family=caption_family, 
+    #   face=caption_face, 
+    #   colour = "#a1a2a3")
     plot.caption = element_textbox_simple(
       halign = 1,
       size=caption_size,
@@ -236,16 +250,16 @@ theme_lt <- function(
 }
 
 #' theme tam for map: no axis, no ticks, ...
-#' @rdname theme_lt
-#' @inheritDotParams theme_lt
+#' @rdname theme_tam
+#' @inheritDotParams theme_tam
 #' @examples
 #' require(ggplot2)
 #' require(dqnTheme)
-#' qplot(1:10, 1:10, size = 10:1) + theme_ltmap()
+#' qplot(1:10, 1:10, size = 10:1) + theme_tamap()
 #' @export
-theme_ltmap = function(...)
+theme_tamap = function(...)
 {
-  theme_new <- theme_lt(...)
+  theme_new <- theme_tam(...)
   theme_new <- theme_update(
     legend.position = "top", 
     plot.margin = unit(c(0, 0, 0, 0), "lines"),
@@ -259,19 +273,5 @@ theme_ltmap = function(...)
     axis.text = element_blank()
   )
   theme_new
-}
-
-#' Update matching font defaults for text geoms
-#'
-#' Updates [ggplot2::geom_label] and [ggplot2::geom_text] font defaults
-#' @rdname theme_lt
-#' @param family,face,size,color font family name, face, size and color
-#' @export
-update_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
-                                      color = "#222222") {
-  update_geom_defaults("text", 
-                       list(family=family, face=face, size=size, color=color))
-  update_geom_defaults("label", 
-                       list(family=family, face=face, size=size, color=color))
 }
 

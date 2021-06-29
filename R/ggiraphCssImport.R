@@ -7,6 +7,8 @@
 ##' @examples
 ##' \dontrun{
 ##'   ggiraphCss()
+##'   normalizeCss()
+##'   bootstrapCss()
 ##' }
 ggiraphCss <- function() {
   list.files(system.file("extdata", package="dqnTheme"), 'ggiraph.css', full.names = T)
