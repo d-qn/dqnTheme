@@ -3,20 +3,30 @@
 \docType{data}
 \name{tam_pal}
 \alias{tam_pal}
+\alias{lt_spal}
 \alias{tam_dpal}
+\alias{lt_dpal}
 \alias{tam_spal}
-\title{Tamedia TG color palette}
+\title{Color palettes}
 \format{
 An object of class \code{character} of length 8.
 
+An object of class \code{character} of length 7.
+
 An object of class \code{character} of length 13.
+
+An object of class \code{character} of length 9.
 
 An object of class \code{character} of length 7.
 }
 \usage{
 tam_pal
 
+lt_spal
+
 tam_dpal
+
+lt_dpal
 
 tam_spal
 }
@@ -29,11 +39,13 @@ tam_pal: 8 categorical tam colors
 
 tam_dpal: diverging color palette with 13 levels
 
-tam_spal:  single hue blueish
+tam_spal: single hue blueish
 }
 \examples{
 pie(rep(1,length(tam_pal)), col=tam_pal)
+pie(rep(1,length(lt_spal)), col=lt_spal)
 pie(rep(1,length(tam_dpal)), col=tam_dpal)
+pie(rep(1,length(lt_dpal)), col=lt_dpal)
 pie(rep(1,length(tam_spal)), col=tam_spal)
 }
 \keyword{datasets}

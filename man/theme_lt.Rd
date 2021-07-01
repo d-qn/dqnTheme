@@ -11,20 +11,20 @@ theme_lt(
   grid = "XY",
   axis = T,
   yAxisNoTitle = F,
-  base_family = "IBM Plex Sans",
+  base_family = "Titillium Web",
   base_size = 15,
   plot_title_family = base_family,
   plot_title_size = 20,
   plot_title_face = "bold",
   plot_title_margin = 12,
-  subtitle_family = "IBM Plex Sans Light",
+  subtitle_family = "Titillium Web Light",
   subtitle_size = 15,
   subtitle_face = "plain",
   subtitle_margin = 8,
   strip_text_family = base_family,
   strip_text_size = 16,
   strip_text_face = "plain",
-  caption_family = "IBM Plex Sans Light",
+  caption_family = "Titillium Web Light",
   caption_size = 11,
   caption_face = "plain",
   caption_margin = 12,
@@ -44,7 +44,7 @@ theme_lt(
 theme_ltmap(...)
 
 update_geom_font_defaults(
-  family = "IBM Plex Sans",
+  family = "Titillium Web",
   face = "plain",
   size = 3.5,
   color = "#222222"
@@ -106,7 +106,7 @@ qplot(1:10, 1:10, size = 10:1) +
   ylab ("y axis label") + 
   theme_lt() +
   labs(title = "A catchy long <span style = 'color:red;'>title</span>, that should be wrapped which is pretty awesome", 
-    subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
+    subtitle = "A descriptive subtitle, that is also wrapped, **pure awesomeness** too.",
     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
 
 # based on https://rud.is/b/2016/03/16/supreme-annotations/
@@ -116,7 +116,7 @@ qplot(1:10, 1:10, size = 10:1) +
   theme_lt(yAxisNoTitle = TRUE, grid = 'x') +
   labs(
     title = "A catchy title", 
-    subtitle = "A descriptive subtitle", caption = "source: ofs | Tamedia") +
+    subtitle = "A descriptive subtitle", caption = "source: ofs | Le Temps") +
   annotate(geom = "label", x = 0.2, y = 10, 
     label = "super unité", hjust = 0, vjust = 0.5, 
    label.padding = unit(0.15, "lines"),
@@ -129,7 +129,7 @@ theme_lt()
 # seminal scatterplot
 gp <- ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
-  labs(x="Fuel effiiency (mpg)", y="Weight (tons)",
+  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
        title="Seminal ggplot2 scatterplot example",
        subtitle="A plot that is only useful for demonstration purposes",
        caption="Brought to you by the letter 'g'")

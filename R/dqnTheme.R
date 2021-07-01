@@ -35,7 +35,7 @@
 #'   ylab ("y axis label") + 
 #'   theme_lt() +
 #'   labs(title = "A catchy long <span style = 'color:red;'>title</span>, that should be wrapped which is pretty awesome", 
-#'     subtitle = "A descriptive subtitle, that is also wrapped, pure awesomeness too.",
+#'     subtitle = "A descriptive subtitle, that is also wrapped, **pure awesomeness** too.",
 #'     caption = "caption: Lorem ipsum dolor sit amet, consectetur adipiscing elit. A long caption that wraps too yo!")
 #' 
 #' # based on https://rud.is/b/2016/03/16/supreme-annotations/
@@ -74,14 +74,14 @@ theme_lt <- function(
   grid = 'XY',
   axis = T,
   yAxisNoTitle = F,
-  base_family = "IBM Plex Sans", 
+  base_family = "Titillium Web", 
   base_size = 15,
   plot_title_family = base_family, 
   plot_title_size = 20,
   plot_title_face = "bold", 
   plot_title_margin = 12,
   
-  subtitle_family = "IBM Plex Sans Light", 
+  subtitle_family = "Titillium Web Light", 
   subtitle_size = 15,
   subtitle_face = "plain", 
   subtitle_margin = 8,
@@ -89,7 +89,7 @@ theme_lt <- function(
   strip_text_family = base_family, 
   strip_text_size = 16, 
   strip_text_face = "plain",
-  caption_family= "IBM Plex Sans Light", 
+  caption_family= "Titillium Web Light", 
   caption_size = 11,
   caption_face = "plain", 
   caption_margin = 12,
@@ -267,7 +267,7 @@ theme_ltmap = function(...)
 #' @rdname theme_lt
 #' @param family,face,size,color font family name, face, size and color
 #' @export
-update_geom_font_defaults <- function(family="IBM Plex Sans", face="plain", size=3.5,
+update_geom_font_defaults <- function(family="Titillium Web", face="plain", size=3.5,
                                       color = "#222222") {
   update_geom_defaults("text", 
                        list(family=family, face=face, size=size, color=color))
