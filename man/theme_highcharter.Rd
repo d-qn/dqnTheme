@@ -4,11 +4,14 @@
 \name{hc_theme_tg}
 \alias{hc_theme_tg}
 \alias{hc_theme_TA}
+\alias{hc_theme_lt}
 \alias{style_tam_highcharter}
 \alias{style_ta_highcharter}
 \alias{htmlwidgetgrid_css}
-\title{Highchart(er) TG-Tamedia theme}
+\title{Highchart(er) themes}
 \format{
+An object of class \code{hc_theme} of length 8.
+
 An object of class \code{hc_theme} of length 8.
 
 An object of class \code{hc_theme} of length 8.
@@ -17,6 +20,8 @@ An object of class \code{hc_theme} of length 8.
 hc_theme_tg
 
 hc_theme_TA
+
+hc_theme_lt
 
 style_tam_highcharter()
 
@@ -36,14 +41,19 @@ hchart(mpg, "scatter",
   hc_add_theme(hc_theme_tg) \%>\% 
   hc_title(text = "super catchy title") \%>\% 
   hc_subtitle(text = "a description of what the hell is shown")
-require(highcharter)
-require(dqnTheme)
-data(diamonds, mpg, package = "ggplot2")
+
 hchart(mpg, "scatter", 
   hcaes(x = displ, y = hwy, group = class)) \%>\% 
   hc_add_theme(hc_theme_TA) \%>\% 
   hc_title(text = "Super catchy title") \%>\% 
-  hc_subtitle(text = "a description of what the hell is shown")
+  hc_subtitle(text = "A description of what the hell is shown")
+
+data(diamonds, mpg, package = "ggplot2")
+hchart(mpg, "scatter", 
+  hcaes(x = displ, y = hwy, group = class)) \%>\% 
+  hc_add_theme(hc_theme_lt) \%>\% 
+  hc_title(text = "Super cool catchy title") \%>\% 
+  hc_subtitle(text = "A long detailed description of what the hell is shown")
 style_tam_highcharter()
 style_ta_highcharter()
 # A modified version of highcharter's htmlwdgtgrid.css, with much less margin on mobile
