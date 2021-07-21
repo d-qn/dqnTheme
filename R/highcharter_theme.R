@@ -250,7 +250,7 @@ hc_theme_lt <- highcharter::hc_theme(
       color = '#202346',
       fontFamily = "Titillium Web",
       fontSize = "1.7em",
-      fontWeight = "600"
+      fontWeight = "700"
     )
   ),
   subtitle = list(
