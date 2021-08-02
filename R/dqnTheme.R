@@ -76,10 +76,10 @@ theme_lt <- function(
   yAxisNoTitle = F,
   base_family = "Raleway", 
   base_size = 15,
-  plot_title_family = base_family, 
-  plot_title_size = 20,
-  plot_title_face = "bold", 
-  plot_title_margin = margin(b=12),
+  plot_title_family = "Merriweather", 
+  plot_title_size = 21,
+  plot_title_face = "plain", 
+  plot_title_margin = margin(b=11),
   
   subtitle_family = "Raleway Light", 
   subtitle_size = 15,
@@ -100,10 +100,10 @@ theme_lt <- function(
   axis_title_just = "rt",
   plot_margin = margin(9, 12, 7, 3),
   grid_col = "#d6d7dd",
-  axis_col = "#333333",
-  axis.text.colour = "#333333",
-  axis.title.colour = "#202346", 
-  axis.ticks.colour = "#393d60") 
+  axis_col = "#120707",
+  axis.text.colour = "#120707",
+  axis.title.colour = "#260d0d", 
+  axis.ticks.colour = "#351717") 
 {
   ret <- theme_minimal(base_family = base_family, base_size = base_size)
   ret <- ret + theme(legend.background=element_blank())
@@ -195,7 +195,7 @@ theme_lt <- function(
       family = plot_title_family, 
       face = plot_title_face,
       colour = "#202346",
-      margin = margin(b=plot_title_margin)
+      margin = margin(plot_title_margin)
     ))
   ret <- ret + theme(
     plot.subtitle = element_textbox_simple(
