@@ -239,7 +239,7 @@ hc_theme_lt <- highcharter::hc_theme(
   chart = list(
     # backgroundColor = "#f2f2f2",
     style = list (
-      fontFamily = 'Titillium Web'
+      fontFamily = 'Raleway'
     ),
     spacing = c(20, 5, 2, 0)
   ),
@@ -248,7 +248,7 @@ hc_theme_lt <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#202346',
-      fontFamily = "Titillium Web",
+      fontFamily = "Merriweather",
       fontSize = "1.7em",
       fontWeight = "700"
     )
@@ -258,14 +258,14 @@ hc_theme_lt <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#5c5f78',
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Raleway',
       fontWeight = 200,
       fontSize = "1.3em"
     )
   ),
   legend = list(
     itemStyle = list(
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Raleway',
       fontSize = "1em",
       color = 'black',
       fontWeight = 300
@@ -327,7 +327,7 @@ hc_theme_lt <- highcharter::hc_theme(
     borderRadius = 10,
     padding = 4,
     style = list (
-      fontFamily = 'Titillium Web',
+      fontFamily = 'Raleway',
       fontSize = "0.9em"
     )
   )

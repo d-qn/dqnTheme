@@ -37,7 +37,7 @@ theme_lt(
   grid_col = "#d6d7dd",
   axis_col = "#120707",
   axis.text.colour = "#120707",
-  axis.title.colour = "#260d0d",
+  axis.title.colour = "#240f0f",
   axis.ticks.colour = "#351717"
 )
 
