@@ -8,7 +8,7 @@
 #' @param axis add x or y axes? `TRUE`, `FALSE`, "`xy`"
 #' @param yAxisNoTitle a logical, should the y title, y-axis and y-ticks be removed? See this example \url{https://rud.is/b/2016/03/16/supreme-annotations/}
 #' @param base_family,base_size base font family and size
-#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margi
+#' @param plot_title_family,plot_title_face,plot_title_size,plot_title_margin plot title family, face, size and margin (as a `margin` function)
 #' @param subtitle_family,subtitle_face,subtitle_size plot subtitle family, face and size
 #' @param subtitle_margin plot subtitle margin bottom (single numeric value)
 #' @param strip_text_family,strip_text_face,strip_text_size facet label font family, face and size
@@ -79,7 +79,7 @@ theme_lt <- function(
   plot_title_family = base_family, 
   plot_title_size = 20,
   plot_title_face = "bold", 
-  plot_title_margin = 12,
+  plot_title_margin = margin(b=12),
   
   subtitle_family = "Raleway Light", 
   subtitle_size = 15,

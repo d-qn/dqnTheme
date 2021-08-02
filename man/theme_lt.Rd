@@ -16,7 +16,7 @@ theme_lt(
   plot_title_family = base_family,
   plot_title_size = 20,
   plot_title_face = "bold",
-  plot_title_margin = 12,
+  plot_title_margin = margin(b = 12),
   subtitle_family = "Raleway Light",
   subtitle_size = 15,
   subtitle_face = "plain",
@@ -61,7 +61,7 @@ update_geom_font_defaults(
 
 \item{base_family, base_size}{base font family and size}
 
-\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margi}
+\item{plot_title_family, plot_title_face, plot_title_size, plot_title_margin}{plot title family, face, size and margin (as a `margin` function)}
 
 \item{subtitle_family, subtitle_face, subtitle_size}{plot subtitle family, face and size}
 
