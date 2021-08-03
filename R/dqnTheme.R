@@ -101,7 +101,7 @@ theme_lt <- function(
   plot_margin = margin(9, 12, 7, 3),
   grid_col = "#d6d7dd",
   axis_col = "#120707",
-  axis.text.colour = "#120707",
+  axis.text.colour = "#9e9494",
   axis.title.colour = "#240f0f", 
   axis.ticks.colour = "#351717") 
 {
@@ -267,8 +267,8 @@ theme_ltmap = function(...)
 #' @rdname theme_lt
 #' @param family,face,size,color font family name, face, size and color
 #' @export
-update_geom_font_defaults <- function(family="Titillium Web", face="plain", size=3.5,
-                                      color = "#222222") {
+update_geom_font_defaults <- function(family="Raleway", face="plain", size=3.5,
+                                      color = "#1a1a1a") {
   update_geom_defaults("text", 
                        list(family=family, face=face, size=size, color=color))
   update_geom_defaults("label", 

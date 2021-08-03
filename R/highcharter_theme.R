@@ -295,8 +295,8 @@ hc_theme_lt <- highcharter::hc_theme(
     title = list(
       align = "high",
       style = list (
-        fontWeight = 400,
-        fontSize = '1.3em',
+        fontWeight = 700,
+        fontSize = '1.2em',
         color = "#202346"
       )
     )
@@ -317,8 +317,8 @@ hc_theme_lt <- highcharter::hc_theme(
       align = "high",
       margin = 3,
       style = list (
-        fontWeight = 400,
-        fontSize = '1.3em',
+        fontWeight = 700,
+        fontSize = '1.2em',
         color = "#202346"
       )
     )

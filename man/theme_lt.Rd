@@ -36,7 +36,7 @@ theme_lt(
   plot_margin = margin(9, 12, 7, 3),
   grid_col = "#d6d7dd",
   axis_col = "#120707",
-  axis.text.colour = "#120707",
+  axis.text.colour = "#9e9494",
   axis.title.colour = "#240f0f",
   axis.ticks.colour = "#351717"
 )
@@ -44,10 +44,10 @@ theme_lt(
 theme_ltmap(...)
 
 update_geom_font_defaults(
-  family = "Titillium Web",
+  family = "Raleway",
   face = "plain",
   size = 3.5,
-  color = "#222222"
+  color = "#1a1a1a"
 )
 }
 \arguments{
