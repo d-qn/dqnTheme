@@ -247,7 +247,7 @@ hc_theme_lt <- highcharter::hc_theme(
     align = "left",
     x = 4, 
     style = list(
-      color = '#202346',
+      color = '#240f13',
       fontFamily = "Merriweather",
       fontSize = "1.7em",
       fontWeight = "700"
@@ -257,7 +257,7 @@ hc_theme_lt <- highcharter::hc_theme(
     align = "left",
     x = 4, 
     style = list(
-      color = '#5c5f78',
+      color = '#5e5557',
       fontFamily = 'Raleway',
       fontWeight = 200,
       fontSize = "1.3em"
