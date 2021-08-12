@@ -249,9 +249,10 @@ hc_theme_lt <- highcharter::hc_theme(
     style = list(
       color = '#240f13',
       fontFamily = "Merriweather",
-      fontSize = "1.7em",
+      fontSize = "1.4em",
       fontWeight = "700"
-    )
+    ),
+    useHTML = T
   ),
   subtitle = list(
     align = "left",
@@ -260,8 +261,9 @@ hc_theme_lt <- highcharter::hc_theme(
       color = '#5e5557',
       fontFamily = 'Raleway',
       fontWeight = 200,
-      fontSize = "1.3em"
-    )
+      fontSize = "1.1em"
+    ),
+    useHTML = T
   ),
   legend = list(
     itemStyle = list(
