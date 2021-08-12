@@ -76,7 +76,7 @@ theme_lt <- function(
   yAxisNoTitle = F,
   base_family = "Raleway", 
   base_size = 15,
-  plot_title_family = "Merriweather", 
+  plot_title_family = "Montserrat", 
   plot_title_size = 21,
   plot_title_face = "plain", 
   plot_title_margin = margin(b=11),

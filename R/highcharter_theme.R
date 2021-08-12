@@ -248,7 +248,7 @@ hc_theme_lt <- highcharter::hc_theme(
     x = 4, 
     style = list(
       color = '#240f13',
-      fontFamily = "Merriweather",
+      fontFamily = "Montserrat",
       fontSize = "1.4em",
       fontWeight = "700"
     ),
