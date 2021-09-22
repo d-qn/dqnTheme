@@ -74,9 +74,9 @@ theme_lt <- function(
   grid = 'XY',
   axis = T,
   yAxisNoTitle = F,
-  base_family = "Raleway", 
+  base_family = "Raleway Light", 
   base_size = 15,
-  plot_title_family = "Montserrat", 
+  plot_title_family = "Montserrat SemiBold", 
   plot_title_size = 21,
   plot_title_face = "plain", 
   plot_title_margin = margin(b=11),
@@ -202,9 +202,9 @@ theme_lt <- function(
       size=subtitle_size,
       lineheight = 1.2,
       margin = margin(b=subtitle_margin),
-      family=subtitle_family, 
-      face=subtitle_face,
-      colour = "#999baa"
+      family = subtitle_family, 
+      face = subtitle_face,
+      colour = "#92878d"
     ))
   ret <- ret + theme(
     plot.caption = element_textbox_simple(
