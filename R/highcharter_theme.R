@@ -235,7 +235,7 @@ hc_theme_TA <- highcharter::hc_theme(
 #'   hc_subtitle(text = "A long detailed description of what the hell is shown")
 
 hc_theme_lt <- highcharter::hc_theme(
-  colors = tam_pal,
+  colors = lt_pal,
   chart = list(
     # backgroundColor = "#f2f2f2",
     style = list (

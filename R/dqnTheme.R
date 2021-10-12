@@ -68,6 +68,19 @@
 #' gp + theme_lt(grid = '')
 #' gp + theme_lt(axis_col = "#d6d7dd")
 #' gp + theme_lt( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
+#' 
+#' ## To illustrate LT colours
+#' avg_price <- diamonds %>%
+#' group_by(cut, color) %>%
+#'  summarise(price = mean(price)) %>%
+#'  ungroup() %>%
+#'  mutate(price_rel = price - mean(price))
+#' sbg <- ggplot(avg_price) +
+#' geom_col(aes(x = cut, y = price, fill = color)) +
+#' theme_lt() +
+#' scale_fill_manual(values = lt_pal)
+#' sbg +
+#' labs(title = "Super titre", subtitle = "a long useful description")
 #' }
 theme_lt <- function(
   ticks = FALSE, 

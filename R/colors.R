@@ -20,6 +20,26 @@ tam_pal <- c(
   "#a95c9a", "#5ca0f7"
 )
 
+
+##' Le Temps categorical colour palette for the web
+##' https://projects.susielu.com/viz-palette?colors=[%22#4a668f%22,%22#bfa6a2%22,%22#ad312f%22,%22#64386F%22,%22#5c7c2d%22,%22#bc8800%22,%22#007685%22,%22#b84a89%22,%22#7e4800%22]&backgroundColor=%22#ffffff%22&fontColor=%22black%22&mode=%22normal%22
+##' @rdname colors_tam
+##' @export
+##' @examples
+##' pie(rep(1,length(lt_pal)), col=lt_pal)
+lt_pal <- c(
+  "#4a668f",
+   "#bfa6a2",
+   "#ad312f",
+   "#64386f",
+   "#5c7c2d",
+   "#bc8800",
+   "#007685",
+   "#b84a89",
+   "#7e4800"
+)
+
+
 ##' Single hue sequential red color palette
 ##' @rdname colors_tam
 ##' @export
