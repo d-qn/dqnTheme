@@ -261,10 +261,27 @@ theme_lt <- function(
 #' @examples
 #' \dontrun{
 #' 
+#' # create data
+#'time <- as.numeric(rep(seq(1,7),each=7))  # x Axis
+#'value <- runif(49, 10, 100)               # y Axis
+#'group <- rep(LETTERS[1:7],times=7)        # group, one shape per group
+#'data <- data.frame(time, value, group)
+#'
+# stacked area chart
+#'ggplot(data, aes(x=time, y=value, fill=group)) + 
+#'  geom_area() +
+#'  theme_temps() + 
+#'  scale_fill_manual(values = temps_pal)
+#'
 #' gp + theme_temps()
 #' gp + theme_temps(ticks = T)
 #' gp + theme_temps(axis = F)
 #' gp + theme_temps(grid = '')
+#' 
+#' # use another palette
+#' sbg + 
+#'   theme_temps() + 
+#'   scale_fill_manual(values = temps_pal)
 #' }
 theme_temps <- function(
   ticks = FALSE, 
@@ -442,13 +459,6 @@ theme_temps <- function(
 }
 
 
-
-
-
-
-
-
-
 #' theme tam for map: no axis, no ticks, ...
 #' @rdname theme_lt
 #' @inheritDotParams theme_lt
@@ -481,7 +491,7 @@ theme_ltmap = function(...)
 #' @rdname theme_lt
 #' @param family,face,size,color font family name, face, size and color
 #' @export
-update_geom_font_defaults <- function(family="Raleway", face="plain", size=3.5,
+update_geom_font_defaults <- function(family="Ratio-Medium", face="plain", size=3.5,
                                       color = "#1a1a1a") {
   update_geom_defaults("text", 
                        list(family=family, face=face, size=size, color=color))

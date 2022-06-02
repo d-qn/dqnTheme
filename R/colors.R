@@ -20,6 +20,35 @@ tam_pal <- c(
   "#a95c9a", "#5ca0f7"
 )
 
+##' Le Temps-Bontron categorical colour palette for the web 
+##' https://projects.susielu.com/viz-palette?colors=[%22#3EB7E4%22,%22#D90065%22,%22#76B82A%22,%22#FFD100%22,%22#7E1E70%22,%22#F18500%22,%22#E30613%22,%22#0064B0%22,%22#009764%22]&backgroundColor=%22white%22&fontColor=%22black%22&mode=%22normal%22
+##' @rdname colors_tam
+##' @export
+##' @examples
+##' pie(rep(1,length(temps_pal)), col=temps_pal)
+temps_pal <- c(
+  "#3eb7e4",
+   "#d90065",
+   "#76b82a",
+   "#ffd100",
+   "#7e1e70",
+   "#f18500",
+   "#e30613",
+   "#0064b0",
+   "#009764"
+)
+
+##' Another single hue sequential red color palette 
+##' https://gka.github.io/palettes/#/10|s|c20027,b78d95,f8f5f8|ffffe0,ff005e,93003a|1|1
+##' @rdname colors_tam
+##' @export
+##' @examples
+##' pie(rep(1,length(temps_spal)), col=temps_spal)
+temps_spal <- c(
+  '#c20027', '#c53f43', '#c95e5d', '#cd7776', '#d18e8e', 
+  '#d6a3a5', '#dcb9bb', '#e4cdd0', '#ede1e5', '#f8f5f8'
+)
+
 
 ##' Le Temps categorical colour palette for the web
 ##' https://projects.susielu.com/viz-palette?colors=[%22#4a668f%22,%22#bfa6a2%22,%22#ad312f%22,%22#64386F%22,%22#5c7c2d%22,%22#bc8800%22,%22#007685%22,%22#b84a89%22,%22#7e4800%22]&backgroundColor=%22#ffffff%22&fontColor=%22black%22&mode=%22normal%22

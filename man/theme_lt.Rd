@@ -81,7 +81,7 @@ theme_temps(
 theme_ltmap(...)
 
 update_geom_font_defaults(
-  family = "Raleway",
+  family = "Ratio-Medium",
   face = "plain",
   size = 3.5,
   color = "#1a1a1a"
@@ -194,10 +194,26 @@ labs(title = "Super titre", subtitle = "a long useful description")
 }
 \dontrun{
 
+# create data
+time <- as.numeric(rep(seq(1,7),each=7))  # x Axis
+value <- runif(49, 10, 100)               # y Axis
+group <- rep(LETTERS[1:7],times=7)        # group, one shape per group
+data <- data.frame(time, value, group)
+
+ggplot(data, aes(x=time, y=value, fill=group)) + 
+ geom_area() +
+ theme_temps() + 
+ scale_fill_manual(values = temps_pal)
+
 gp + theme_temps()
 gp + theme_temps(ticks = T)
 gp + theme_temps(axis = F)
 gp + theme_temps(grid = '')
+
+# use another palette
+sbg + 
+  theme_temps() + 
+  scale_fill_manual(values = temps_pal)
 }
 require(ggplot2)
 require(dqnTheme)
