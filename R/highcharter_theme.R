@@ -1,6 +1,6 @@
 #' Highchart(er) themes
 #' 
-#' Some helpers to get a TG look for highcharter
+#' Some helpers to get a Le Temps look for highcharter
 #'
 #' @rdname theme_highcharter
 #' @importFrom highcharter hc_theme
@@ -12,16 +12,16 @@
 #' data(diamonds, mpg, package = "ggplot2")
 #' hchart(mpg, "scatter", 
 #'   hcaes(x = displ, y = hwy, group = class)) %>% 
-#'   hc_add_theme(hc_theme_tg) %>% 
+#'   hc_add_theme(hc_theme_temps) %>% 
 #'   hc_title(text = "super catchy title") %>% 
 #'   hc_subtitle(text = "a description of what the hell is shown")
 
-hc_theme_tg <- highcharter::hc_theme(
-  colors = tam_pal,
+hc_theme_temps <- highcharter::hc_theme(
+  colors = temps_pal,
   chart = list(
-   # backgroundColor = "#f2f2f2",
+    backgroundColor = "#F7F7F7",
     style = list (
-      fontFamily = 'Roboto Condensed'
+      fontFamily = 'Ratio'
     ),
     spacing = c(20, 5, 2, 0)
   ),
@@ -29,9 +29,9 @@ hc_theme_tg <- highcharter::hc_theme(
     align = "left",
     x = 4, 
     style = list(
-      color = '#1a1a1a',
-      fontFamily = "Roboto Condensed",
-      fontSize = "1.6em",
+      color = '#333333',
+      fontFamily = "Ratio",
+      fontSize = "20px",
       fontWeight = "bold"
     )
   ),
@@ -39,18 +39,18 @@ hc_theme_tg <- highcharter::hc_theme(
     align = "left",
     x = 4, 
     style = list(
-      color = '#262626',
-      fontFamily = 'Roboto Condensed',
-      fontWeight = 200,
-      fontSize = "1.3em"
+      color = '#333333',
+      fontFamily = 'Rooney',
+      fontWeight = 400,
+      fontSize = "11px"
     )
   ),
   legend = list(
     itemStyle = list(
-      fontFamily = 'Roboto Condensed',
-      fontSize = "1em",
+      fontFamily = 'Ratio',
+      fontSize = "9px",
       color = 'black',
-      fontWeight = 300
+      fontWeight = 400
     ),
     itemHoverStyle = list(
       color = 'gray'
@@ -69,16 +69,16 @@ hc_theme_tg <- highcharter::hc_theme(
       tickColor = "#CEC6B9",
       tickWidth = 1,
       style = list (
-        fontWeight = 200,
-        fontSize = '1em',
+        fontWeight = 400,
+        fontSize = '10px',
         color = "#333333"
       )
     ),
     title = list(
       align = "high",
       style = list (
-        fontWeight = 400,
-        fontSize = '1.3em',
+        fontWeight = "bold",
+        fontSize = '11px',
         color = "#333333"
       )
     )
@@ -90,8 +90,8 @@ hc_theme_tg <- highcharter::hc_theme(
     labels = list(
       distance = 5,
       style = list (
-        fontWeight = 200,
-        fontSize = '1em',
+        fontWeight = 400,
+        fontSize = '10px',
         color = "#333333"
       )
     ),
@@ -99,8 +99,8 @@ hc_theme_tg <- highcharter::hc_theme(
       align = "high",
       margin = 3,
       style = list (
-        fontWeight = 400,
-        fontSize = '1.3em',
+        fontWeight = "bold",
+        fontSize = '11px',
         color = "#333333"
       )
     )
@@ -109,7 +109,7 @@ hc_theme_tg <- highcharter::hc_theme(
     borderRadius = 10,
     padding = 4,
     style = list (
-      fontFamily = 'Roboto Condensed',
+      fontFamily = 'Ratio',
       fontSize = "0.9em"
     )
   )

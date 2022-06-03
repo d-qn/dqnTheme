@@ -271,7 +271,12 @@ theme_lt <- function(
 #'ggplot(data, aes(x=time, y=value, fill=group)) + 
 #'  geom_area() +
 #'  theme_temps() + 
-#'  scale_fill_manual(values = temps_pal)
+#'  scale_fill_manual(values = temps_pal) +
+#'  labs(
+#'    title = "Super long but meaningful title that will wrap which is awesome",
+#'    subtitle = "Not less useful description of that magnificent chart",
+#'    caption = "Source: Serious reliable stuff" 
+#'  )
 #'
 #' gp + theme_temps()
 #' gp + theme_temps(ticks = T)
