@@ -88,7 +88,7 @@ theme_lt <- function(
   grid = 'XY',
   axis = T,
   yAxisNoTitle = F,
-  base_family = "Raleway Light", 
+  base_family = "Raleway", 
   base_size = 15,
   plot_title_family = "Montserrat", 
   plot_title_size = 21,

@@ -31,7 +31,7 @@ hc_theme_temps <- highcharter::hc_theme(
     style = list(
       color = '#333333',
       fontFamily = "Ratio",
-      fontSize = "20px",
+      fontSize = "21px",
       fontWeight = "bold"
     )
   ),
@@ -42,13 +42,13 @@ hc_theme_temps <- highcharter::hc_theme(
       color = '#333333',
       fontFamily = 'Rooney',
       fontWeight = 400,
-      fontSize = "11px"
+      fontSize = "14px"
     )
   ),
   legend = list(
     itemStyle = list(
       fontFamily = 'Ratio',
-      fontSize = "9px",
+      fontSize = "10px",
       color = 'black',
       fontWeight = 400
     ),
@@ -70,7 +70,7 @@ hc_theme_temps <- highcharter::hc_theme(
       tickWidth = 1,
       style = list (
         fontWeight = 400,
-        fontSize = '10px',
+        fontSize = '11px',
         color = "#333333"
       )
     ),
@@ -78,7 +78,7 @@ hc_theme_temps <- highcharter::hc_theme(
       align = "high",
       style = list (
         fontWeight = "bold",
-        fontSize = '11px',
+        fontSize = '12px',
         color = "#333333"
       )
     )
@@ -91,7 +91,7 @@ hc_theme_temps <- highcharter::hc_theme(
       distance = 5,
       style = list (
         fontWeight = 400,
-        fontSize = '10px',
+        fontSize = '11px',
         color = "#333333"
       )
     ),
@@ -100,7 +100,7 @@ hc_theme_temps <- highcharter::hc_theme(
       margin = 3,
       style = list (
         fontWeight = "bold",
-        fontSize = '11px',
+        fontSize = '12px',
         color = "#333333"
       )
     )

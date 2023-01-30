@@ -12,7 +12,7 @@ theme_lt(
   grid = "XY",
   axis = T,
   yAxisNoTitle = F,
-  base_family = "Raleway Light",
+  base_family = "Raleway",
   base_size = 15,
   plot_title_family = "Montserrat",
   plot_title_size = 21,
@@ -125,7 +125,14 @@ update_geom_font_defaults(
 \item{...}{
   Arguments passed on to \code{\link[=theme_lt]{theme_lt}}
   \describe{
-    \item{\code{}}{}
+    \item{\code{base_family,base_size}}{base font family and size}
+    \item{\code{plot_title_family,plot_title_face,plot_title_size,plot_title_margin}}{plot title family, face, size and margin (as a `margin` function)}
+    \item{\code{subtitle_family,subtitle_face,subtitle_size}}{plot subtitle family, face and size}
+    \item{\code{strip_text_family,strip_text_face,strip_text_size}}{facet label font family, face and size}
+    \item{\code{caption_family,caption_face,caption_size,caption_margin}}{plot caption family, face, size and margin}
+    \item{\code{axis_title_family,axis_title_face,axis_title_size}}{axis title font family, face and size}
+    \item{\code{grid_col,axis_col}}{grid & axis colors; default to `#666666` and `#333333`}
+    \item{\code{axis.title.colour,axis.ticks.colour,axis.text.colour}}{a string, a colour}
   }}
 
 \item{family, face, size, color}{font family name, face, size and color}
