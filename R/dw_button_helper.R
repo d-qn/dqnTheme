@@ -56,7 +56,7 @@ dw_button_helper <- function(
       '; font-weight:', font_weight_v,
       '; box-shadow:0px 0px 4px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> &nbsp;',
       dw_label,
-      ' &nbsp;</a>&nbsp;'
+      ' &nbsp;</a> '
     ) |> paste(collapse = "")
     res_buttons[i] <- dw_button 
   }
