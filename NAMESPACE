@@ -2,6 +2,7 @@
 
 export(bootstrapCss)
 export(dw_button_helper)
+export(dw_update_chart_ifnewdata)
 export(formatBreaks)
 export(ggiraphCss)
 export(hc_theme_TA)

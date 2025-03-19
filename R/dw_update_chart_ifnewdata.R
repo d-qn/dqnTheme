@@ -13,6 +13,7 @@
 ##' 
 ##' 
 ##' @import DatawRappr 
+##' @export
 
 dw_update_chart_ifnewdata <- function (dw_id, api_key, new_data,
                           annotate_text = "",
