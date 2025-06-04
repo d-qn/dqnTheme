@@ -43,5 +43,22 @@ dw_button_helper
 \examples{
 dw_id <- c("tXf1C", "6MxFK")
 dw_label <- c("2025", "2021")
-dw_button_helper(dw_id, dw_label) 
+#dw_button_helper(dw_id, dw_label) 
+
+\dontrun{
+dw_df <- tibble(id = dw_id, label = dw_label, 
+  button = dw_button_helper(dw_id, dw_label)
+  )
+
+1:nrow(dw_df) \%>\% 
+  purrr::walk(function(i) {
+  
+    metadata <- dw_retrieve_chart_metadata(dw_df$id[i])
+    intro_ori <- metadata$content$metadata$describe$intro
+
+    dw_edit_chart(dw_df$id[i],
+                 intro = paste0(intro_ori, "<br><br>", dw_df$button[i]))
+    dw_publish_chart(dw_df$id[i])
+  })
+  }
 }

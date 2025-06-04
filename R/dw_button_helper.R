@@ -19,7 +19,25 @@
 ##' @examples
 ##' dw_id <- c("tXf1C", "6MxFK")
 ##' dw_label <- c("2025", "2021")
-##' dw_button_helper(dw_id, dw_label) 
+##' #dw_button_helper(dw_id, dw_label) 
+##' 
+##' \dontrun{
+##' dw_df <- tibble(id = dw_id, label = dw_label, 
+##'   button = dw_button_helper(dw_id, dw_label)
+##'   )
+##' 
+##' 1:nrow(dw_df) %>% 
+##'   purrr::walk(function(i) {
+##'   
+##'     metadata <- dw_retrieve_chart_metadata(dw_df$id[i])
+##'     intro_ori <- metadata$content$metadata$describe$intro
+##' 
+##'     dw_edit_chart(dw_df$id[i],
+##'                  intro = paste0(intro_ori, "<br><br>", dw_df$button[i]))
+##'     dw_publish_chart(dw_df$id[i])
+##'   })
+##'   }
+
 
 dw_button_helper <- function(
     dw_id, 
@@ -51,10 +69,10 @@ dw_button_helper <- function(
       dw_id,
       '" style="background:', 
       bg_col_v,
-      '; padding:2px 2px; border-radius:3px; color:',
+      '; padding:1px 1px; border-radius:3px; color:',
       font_col_v,
       '; font-weight:', font_weight_v,
-      '; box-shadow:0px 0px 4px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> &nbsp;',
+      '; box-shadow:0px 0px 3px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> &nbsp;',
       dw_label,
       ' &nbsp;</a> '
     ) |> paste(collapse = "")
