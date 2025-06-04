@@ -17,8 +17,8 @@ gp <- ggplot(mtcars) +
 # gp
 # tmpf <- tempfile(fileext = ".png")
 # ggsave(tmpf)
-# plot_image(tmpf) %>% 
-#   render_reorient(flipx = TRUE) %>% 
+# plot_image(tmpf) |> 
+#   render_reorient(flipx = TRUE) |> 
 #   plot_image()
 
 

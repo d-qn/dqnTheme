@@ -2,7 +2,6 @@
 % Please edit documentation in R/dqnTheme.R
 \name{theme_lt}
 \alias{theme_lt}
-\alias{theme_temps}
 \alias{theme_ltmap}
 \alias{update_geom_font_defaults}
 \title{Le Temps and Heidi.news ggplot2 themes}
@@ -40,42 +39,6 @@ theme_lt(
   axis.text.colour = "#9e9494",
   axis.title.colour = "#240f0f",
   axis.ticks.colour = "#351717"
-)
-
-theme_temps(
-  ticks = FALSE,
-  grid = "XY",
-  axis = T,
-  yAxisNoTitle = F,
-  base_family = "Ratio-Medium",
-  base_size = 15,
-  plot_title_family = "Ratio-Bold",
-  plot_title_size = 21,
-  plot_title_face = "bold",
-  plot_title_margin = margin(b = 11),
-  subtitle_family = "Rooney-Medium",
-  subtitle_size = 15,
-  subtitle_face = "plain",
-  subtitle_margin = 8,
-  strip_text_family = base_family,
-  strip_text_size = 16,
-  strip_text_face = "plain",
-  caption_family = "Ratio-Light",
-  caption_size = 11,
-  caption_face = "plain",
-  caption_margin = 12,
-  axis_text_size = base_size - (base_size/10),
-  axis_title_family = base_family,
-  axis_title_size = 15,
-  axis_title_face = "bold",
-  axis_title_just = "rt",
-  plot_margin = margin(9, 12, 7, 3),
-  grid_col = "#d6d7dd",
-  axis_col = "#120707",
-  axis.text.colour = "#333333",
-  axis.title.colour = "#333333",
-  axis.ticks.colour = "#351717",
-  panel.background.colour = "#F7F7F7"
 )
 
 theme_ltmap(...)
@@ -119,8 +82,6 @@ update_geom_font_defaults(
 \item{grid_col, axis_col}{grid & axis colors; default to `#666666` and `#333333`}
 
 \item{axis.title.colour, axis.ticks.colour, axis.text.colour}{a string, a colour}
-
-\item{panel.background.colour}{a string of length 1 hex string colour for the chart background}
 
 \item{...}{
   Arguments passed on to \code{\link[=theme_lt]{theme_lt}}
@@ -187,10 +148,10 @@ gp + theme_lt(axis_col = "#d6d7dd")
 gp + theme_lt( axis.text.colour = "#d6d7dd", axis_col = "#d6d7dd")
 
 ## To illustrate LT colours
-avg_price <- diamonds \%>\%
-group_by(cut, color) \%>\%
- summarise(price = mean(price)) \%>\%
- ungroup() \%>\%
+avg_price <- diamonds |>
+group_by(cut, color) |>
+ summarise(price = mean(price)) |>
+ ungroup() |>
  mutate(price_rel = price - mean(price))
 sbg <- ggplot(avg_price) +
 geom_col(aes(x = cut, y = price, fill = color)) +
@@ -198,34 +159,6 @@ theme_lt() +
 scale_fill_manual(values = lt_pal)
 sbg +
 labs(title = "Super titre", subtitle = "a long useful description")
-}
-\dontrun{
-
-# create data
-time <- as.numeric(rep(seq(1,7),each=7))  # x Axis
-value <- runif(49, 10, 100)               # y Axis
-group <- rep(LETTERS[1:7],times=7)        # group, one shape per group
-data <- data.frame(time, value, group)
-
-ggplot(data, aes(x=time, y=value, fill=group)) + 
- geom_area() +
- theme_temps() + 
- scale_fill_manual(values = temps_pal) +
- labs(
-   title = "Super long but meaningful title that will wrap which is awesome",
-   subtitle = "Not less useful description of that magnificent chart",
-   caption = "Source: Serious reliable stuff" 
- )
-
-gp + theme_temps()
-gp + theme_temps(ticks = T)
-gp + theme_temps(axis = F)
-gp + theme_temps(grid = '')
-
-# use another palette
-sbg + 
-  theme_temps() + 
-  scale_fill_manual(values = temps_pal)
 }
 require(ggplot2)
 require(dqnTheme)

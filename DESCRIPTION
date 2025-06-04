@@ -1,8 +1,8 @@
 Package: dqnTheme
 Type: Package
 Title: Chart themes, colours and convenience functions
-Version: 0.77
-Date: 2021-04-13
+Version: 0.79
+Date: 2025-06-04
 Author: Duc-Quang Nguyen
 Maintainer: Duc-Quang Nguyen <ducquang.nguyen@gmail.com>
 Imports:
@@ -10,6 +10,8 @@ Imports:
     DatawRappr,
     ggtext,
     extrafont,
+    showtext, 
+    sysfonts,
     gridExtra,
     highcharter
 Description: Themes, colors and convienence functions. A mixed bag of stuff.

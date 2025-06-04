@@ -4,7 +4,7 @@ library(htmltools)
 library(shiny)
 
 
-charts <- 1:12 %>% lapply(
+charts <- 1:12 |> lapply(
   function(ii) {
     qplot(rnorm(100), geom = "histogram")    
   }
@@ -17,7 +17,7 @@ fp <- fluidPage(
     column(6, charts[[2]]), column(6, charts[[3]]) 
   )
 ) 
-fp %>% browsable()
+fp |> browsable()
 
 p <- plot_ly(x = rnorm(100))
 fp <- fluidPage(
@@ -26,6 +26,6 @@ fp <- fluidPage(
     column(6, p), column(6, p) 
   )
 ) 
-fp %>% browsable()
+fp |> browsable()
   
   

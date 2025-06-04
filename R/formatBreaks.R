@@ -7,7 +7,7 @@
 #' @export
 #' @examples 
 #' cont_var <- rnorm (100) * 100
-#' brks <- pretty(cont_var, n = 10) # or range(cont_var) %>% pretty()
+#' brks <- pretty(cont_var, n = 10) # or range(cont_var) |> pretty()
 #' brks_labels <- formatBreaks(brks, inbetween_sep = ' - ')
 #' formatBreaks(brks, inbetween_sep = ' - ', suffix_first = " unité")
 #' cut(cont_var, breaks = brks, labels = brks_labels)

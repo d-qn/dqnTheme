@@ -26,7 +26,7 @@
 ##'   button = dw_button_helper(dw_id, dw_label)
 ##'   )
 ##' 
-##' 1:nrow(dw_df) %>% 
+##' 1:nrow(dw_df) |> 
 ##'   purrr::walk(function(i) {
 ##'   
 ##'     metadata <- dw_retrieve_chart_metadata(dw_df$id[i])

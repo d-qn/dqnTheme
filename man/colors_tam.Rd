@@ -3,8 +3,6 @@
 \docType{data}
 \name{tam_pal}
 \alias{tam_pal}
-\alias{temps_pal}
-\alias{temps_spal}
 \alias{lt_pal}
 \alias{lt_spal}
 \alias{tam_dpal}
@@ -13,10 +11,6 @@
 \title{Color palettes}
 \format{
 An object of class \code{character} of length 8.
-
-An object of class \code{character} of length 9.
-
-An object of class \code{character} of length 10.
 
 An object of class \code{character} of length 9.
 
@@ -30,10 +24,6 @@ An object of class \code{character} of length 7.
 }
 \usage{
 tam_pal
-
-temps_pal
-
-temps_spal
 
 lt_pal
 
@@ -58,8 +48,6 @@ tam_spal: single hue blueish
 }
 \examples{
 pie(rep(1,length(tam_pal)), col=tam_pal)
-pie(rep(1,length(temps_pal)), col=temps_pal)
-pie(rep(1,length(temps_spal)), col=temps_spal)
 pie(rep(1,length(lt_pal)), col=lt_pal)
 pie(rep(1,length(lt_spal)), col=lt_spal)
 pie(rep(1,length(tam_dpal)), col=tam_dpal)
