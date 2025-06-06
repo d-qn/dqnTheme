@@ -26,17 +26,17 @@ hc_theme_temps <- highcharter::hc_theme(
     style = list(
       fontFamily = 'Inter, sans-serif'
     ),
-    spacing = c(20, 15, 15, 15),
+    spacing = c(10, 5, 2, 1),
     plotBorderWidth = 0
   ),
   
   title = list(
     align = "left",
-    x = 0, 
+    x = 4, 
     y = 20,
     style = list(
       color = '#1d1d1b',
-      fontFamily = "Merryweather, serif",
+      fontFamily = "Merriweather, serif",
       fontSize = "18px",
       fontWeight = "400",
       lineHeight = "1.2em"
@@ -46,16 +46,16 @@ hc_theme_temps <- highcharter::hc_theme(
   
   subtitle = list(
     align = "left",
-    x = 0,
-    y = 45,
+    x = 4,
     style = list(
       color = '#4a4a49',
       fontFamily = 'Inter, sans-serif',
       fontWeight = "300",
       fontSize = "13px",
-      lineHeight = "1.3em"
+      lineHeight = "1.2em"
     ),
-    useHTML = TRUE
+    useHTML = TRUE,
+    margin = 15  # Marge pour espacer avec la légende
   ),
   
   caption = list(

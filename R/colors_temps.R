@@ -21,7 +21,10 @@ temps_pal <- c(
   "#E6A05F",   # Mandarine
   "#AFA050",   # Or
   "#820019",   # Bordeaux
-  "#9B2350"    # Cerise
+  "#9B2350",    # Cerise
+  
+  "#AFAFA0",  # Sable
+  "#4B4B4B"   # Gris foncé
 )
 
 #' @rdname temps_colors
