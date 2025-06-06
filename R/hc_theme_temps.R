@@ -160,7 +160,7 @@ hc_theme_temps <- highcharter::hc_theme(
   ),
   
   tooltip = list(
-    backgroundColor = "rgba(255, 255, 255, 0.95)",
+    backgroundColor = "rgba(247, 247, 247, 0.95)",  # Fond gris avec transparence
     borderRadius = 4,
     borderWidth = 1,
     borderColor = "#e6e6e6",
