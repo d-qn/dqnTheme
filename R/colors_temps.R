@@ -1,4 +1,4 @@
-#' Palettes de couleurs Le Temps centralisées
+#' Palettes de couleurs Le Temps 
 #'
 #' Toutes les palettes de couleurs selon le styleguide Le Temps 2024
 #'
@@ -14,7 +14,7 @@
 # Palette principale Le Temps
 temps_pal <- c(
   "#005578",   # Mineral (couleur principale)
-  "#2D695F",   # Forêt
+  "#2D695F",   # Foret
   "#467887",   # Teal
   "#4BAFA5",   # Turquoise
   "#AAD250",   # Guacamole
@@ -30,7 +30,7 @@ temps_pal <- c(
 temps_partis_pal <- c(
   "PS" = "#E10014",
   "Les Vert-e-s" = "#AAD250", 
-  "Le centre" = "#E6A05F",
+  "Le Centre" = "#E6A05F",
   "Vert libéraux" = "#5F9B64",
   "PLR" = "#005578",
   "UDC" = "#2D695F",

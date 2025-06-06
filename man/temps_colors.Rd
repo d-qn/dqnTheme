@@ -14,7 +14,7 @@
 \alias{get_temps_divergent}
 \alias{get_temps_partis}
 \alias{setup_temps_fonts}
-\title{Palettes de couleurs Le Temps centralisées}
+\title{Palettes de couleurs Le Temps}
 \format{
 An object of class \code{character} of length 9.
 
