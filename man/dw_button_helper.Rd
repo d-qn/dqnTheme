@@ -11,7 +11,7 @@ dw_button_helper(
   bg_col_norm = "#BFC0BF",
   font_col_hl = "#FFFFFF",
   font_col_norm = "#FFFFFF",
-  font_weight_hl = 800,
+  font_weight_hl = 600,
   font_weight_norm = 400
 )
 }
