@@ -69,7 +69,7 @@ dw_button_helper <- function(
       dw_id,
       '" style="background:', 
       bg_col_v,
-      '; padding:1px 1px; border-radius:3px; color:',
+      '; padding:6px 8px; border-radius:5px; margin-right:4px; color:',
       font_col_v,
       '; font-weight:', font_weight_v,
       '; box-shadow:0px 0px 3px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;',
