@@ -2,7 +2,7 @@
 % Please edit documentation in R/dw_button_helper.R
 \name{dw_button_helper}
 \alias{dw_button_helper}
-\title{Generate HTML buttons for datawrapper}
+\title{Generate Responsive HTML buttons for Datawrapper}
 \usage{
 dw_button_helper(
   dw_id,
@@ -16,49 +16,25 @@ dw_button_helper(
 )
 }
 \arguments{
-\item{dw_id}{a character vector of datawrapper ids}
+\item{dw_id}{A character vector of Datawrapper IDs.}
 
-\item{dw_label}{a character vector of labels for the buttons}
+\item{dw_label}{A character vector of labels for the buttons.}
 
-\item{bg_col_hl}{a character string for the background color of the highlighted button}
+\item{bg_col_hl}{Background color of the highlighted button.}
 
-\item{bg_col_norm}{a character string for the background color of the normal button}
+\item{bg_col_norm}{Background color of the normal button.}
 
-\item{font_col_hl}{a character string for the font color of the highlighted button}
+\item{font_col_hl}{Font color of the highlighted button.}
 
-\item{font_col_norm}{a character string for the font color of the normal button}
+\item{font_col_norm}{Font color of the normal button.}
 
-\item{font_weight_hl}{a numeric value for the font weight of the highlighted button}
+\item{font_weight_hl}{Font weight of the highlighted button.}
 
-\item{font_weight_norm}{a numeric value for the font weight of the normal button}
+\item{font_weight_norm}{Font weight of the normal button.}
 }
 \value{
-a character string
+A character vector of HTML strings.
 }
 \description{
-Create clickable buttons to navigate different datawrapper charts
-  
-dw_button_helper
-}
-\examples{
-dw_id <- c("tXf1C", "6MxFK")
-dw_label <- c("2025", "2021")
-#dw_button_helper(dw_id, dw_label) 
-
-\dontrun{
-dw_df <- tibble(id = dw_id, label = dw_label, 
-  button = dw_button_helper(dw_id, dw_label)
-  )
-
-1:nrow(dw_df) |> 
-  purrr::walk(function(i) {
-  
-    metadata <- dw_retrieve_chart_metadata(dw_df$id[i])
-    intro_ori <- metadata$content$metadata$describe$intro
-
-    dw_edit_chart(dw_df$id[i],
-                 intro = paste0(intro_ori, "<br><br>", dw_df$button[i]))
-    dw_publish_chart(dw_df$id[i])
-  })
-  }
+Create clickable, responsive buttons to navigate different Datawrapper charts
 }
