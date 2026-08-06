@@ -7,6 +7,7 @@
 dw_button_helper(
   dw_id,
   dw_label,
+  font_size = "0.85rem",
   bg_col_hl = "#414241",
   bg_col_norm = "#BFC0BF",
   font_col_hl = "#FFFFFF",
@@ -19,6 +20,8 @@ dw_button_helper(
 \item{dw_id}{A character vector of Datawrapper IDs.}
 
 \item{dw_label}{A character vector of labels for the buttons.}
+
+\item{font_size}{Font size with CSS unit (e.g., "13px" or "0.85rem").}
 
 \item{bg_col_hl}{Background color of the highlighted button.}
 
@@ -37,4 +40,26 @@ A character vector of HTML strings.
 }
 \description{
 Create clickable, responsive buttons to navigate different Datawrapper charts
+}
+\examples{
+dw_id <- c("tXf1C", "6MxFK")
+dw_label <- c("2025", "2021")
+#dw_button_helper(dw_id, dw_label) 
+
+\dontrun{
+dw_df <- tibble(id = dw_id, label = dw_label, 
+  button = dw_button_helper(dw_id, dw_label)
+  )
+
+1:nrow(dw_df) |> 
+  purrr::walk(function(i) {
+  
+    metadata <- dw_retrieve_chart_metadata(dw_df$id[i])
+    intro_ori <- metadata$content$metadata$describe$intro
+
+    dw_edit_chart(dw_df$id[i],
+                 intro = paste0(intro_ori, "<br><br>", dw_df$button[i]))
+    dw_publish_chart(dw_df$id[i])
+  })
+  }
 }
